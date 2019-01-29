@@ -142,3 +142,11 @@ element.style {
 
 
 
+@media only screen and (max-width: 800px) {
+	
+		#myLogo{
+			width: 78% !important;
+			margin-top: -9px !important;
+		}
+	
+	}
