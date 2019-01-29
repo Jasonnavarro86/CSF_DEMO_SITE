@@ -206,8 +206,61 @@ element.style {}
     }
 }
 
+
+@media only screen and (max-width: 895px) {
+    #myLogo {
+        width: 57% !important;
+        margin-top: -19px !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #myLogo {
+        width: 58% !important;
+        margin-top: -13px !important;
+    }
+    #changeImg {
+        display: none;
+    }
+    #changeImgMobil {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #myLogo {
+        width: 61% !important;
+        margin-top: -13px !important;
+    }
+    #changeImg {
+        display: none;
+    }
+    #changeImgMobil {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    #myLogo {
+        width: 78% !important;
+        margin-top: -9px !important;
+    }
+    #changeImg {
+        display: none;
+    }
+    #changeImgMobil {
+        display: none;
+    }
+    #changeImgMobil2 {
+        display: block;
+    }
+    .section-featured-slider .cycle-caption {
+        bottom: 7% !important;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     #main-slider h3 a {
         font-size: 30px;
     }
-}
+} 
