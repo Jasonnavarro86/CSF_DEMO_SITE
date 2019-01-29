@@ -1,0 +1,123 @@
+
+.site-branding{
+    margin: 0;
+    text-align: center;
+    margin-bottom: 0px;
+    position: absolute;
+    left: 0px;
+    top: -9px;
+}
+footer {
+    background-color: #7C9584 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height:80px !important;
+    font-size: 12px !important;
+    
+}
+.copyright{
+    text-align: center !important;
+    width: 100% !important;
+    margin-top: 32px !important;
+    color: white !important;
+}
+
+#myLogo{
+    width: 100% !important;
+    margin-top: -4px !important;
+}
+
+.d-none{
+display: none !important;
+}
+
+#colophon{
+     background-color:#D9D9D9;
+}
+#masthead{
+    padding: 15px 0;
+}
+.header-v4 #masthead.sticky-enabled.sticky-header {
+    background: #fff !important;
+
+}
+
+.header-v4 .main-navigation ul li a {
+    color: #616161 !important;
+    font-size: 15px !important;
+}
+
+#whiteBackground{
+    background-color: #FFFFFF !important;
+}
+
+
+.section-featured-slider .overlay-enabled article::after {
+    background-color: rgba(101, 101, 101, 0.52) !important;
+}
+
+
+.fixFont{
+    font-family: 'Montserrat', sans-serif !important;
+    
+}
+
+.main-navigation ul li a {
+font-weight: 200 !important;
+font-size: 16px !important;
+}
+
+.main-navigation{
+    text-align: center;
+    margin-top: -19px;
+}
+.navAnchors{
+    padding-right: 184px;
+}
+#social1 {
+    font-size: 40px !important;
+    color:#6b87c5 !important;
+}
+#social2{
+    font-size: 40px !important;
+    color:#4dbddc !important;
+}
+#social3{
+    font-size: 40px !important;
+    color:#4ea0c5!important;
+}
+.section-featured-slider h4 {
+    color: #fff;
+    font-size: 25px !important;
+}
+
+.header-v4 #masthead {
+    background-color: white !important;
+    /* border-bottom: 1px solid #569856 !important; */
+    box-shadow: -2px 1px 1px;
+}
+
+.fab{
+    padding-top: 11px !important;
+}
+
+.section-featured-slider:hover .cycle-prev, .section-featured-slider:hover .cycle-next {
+    opacity: 0 !important;
+}
+
+.fixA{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: -20px !important;
+}
+
+.fixA::before{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: -14px !important;
+}
+.fixA::after{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: -14px !important;
+}
