@@ -8,6 +8,13 @@
     display: none;
 }
 
+#main-slider h3 a {
+    font-family: "Oxygen" !important;
+}
+.section-featured-slider h4 {
+    font-family: "Oxygen" !important;
+}
+
 .site-branding {
     margin: 0;
     text-align: center;
