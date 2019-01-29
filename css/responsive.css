@@ -1501,10 +1501,7 @@
 	    float: none;
 	    display: inline-block;
 	}
-	#myLogo{
-		width: 78% !important;
-		margin-top: -9px !important;
-	}
+	
 }
 /* Smaller than standard 320 (devices and browsers) */
 @media only screen and (max-width:219px){
@@ -1514,14 +1511,7 @@
 		max-width: 310px;
 	}
 }
-@media only screen and (max-width: 800px) {
-	
-		#myLogo{
-			width: 78% !important;
-			margin-top: -9px !important;
-		}
-	
-	}
+
 
 /*--------------------------------------------------------------
 Main css ends form here
