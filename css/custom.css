@@ -121,3 +121,24 @@ font-size: 16px !important;
     padding-bottom: 0px !important;
     margin-top: -14px !important;
 }
+
+.header-v4 #masthead.sticky-enabled.sticky-header {
+    background: #fff !important;
+    border-bottom: none !important;
+}
+
+element.style {
+}
+.header-v4 #masthead {
+  
+    border-bottom: 1px solid #569856 !important;
+  
+}
+
+.pager-box cycle-pager-active{
+    display: none !important;
+}
+
+
+
+
