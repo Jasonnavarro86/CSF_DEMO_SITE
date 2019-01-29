@@ -38,7 +38,7 @@ a:active,
 .main-navigation li > a:hover, .main-navigation li.current-menu-item > a, .main-navigation li.current-page-item > a, .main-navigation li:hover > a,
 .main-navigation li li > a:hover, .main-navigation li li.current-menu-item > a, .main-navigation li li.current-page-item > a, .main-navigation li li:hover > a,
 .quick-contact li i {
-	color: #a6754b;
+	color: #81D9D2;
 }
 
 input[type="button"],
@@ -88,11 +88,11 @@ a.button:focus,h3.contact-title,
   .faq-section .accordionjs .acc_section.acc_active > .acc_head, .faq-section .accordionjs .acc_section > .acc_head:hover,
   .section-plan .pricing-plan-recommended .pricing-plan-header::after,
   .section-services.service-layout-2 .service-block-inner:hover .service-icon{
- 	background: #a6754b;
+ 	background: #81D9D2;
 }
 ::-moz-selection,
 ::selection {
-	background-color: #a6754b;
+	background-color: #81D9D2;
 }
 .pagination .nav-links .current,
 .pagination .nav-links a:hover,
@@ -106,7 +106,7 @@ a.button:focus,h3.contact-title,
 .search-box-wrap,
 a.media-zoom-icon:before,
 .header-v2 #main-navigation {
-	border-color: #a6754b;
+	border-color: #81D9D2;
 }
 
 

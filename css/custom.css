@@ -1,4 +1,6 @@
-#changeImg {}
+#changeImg {
+    
+}
 
 #changeImgMobil {
     display: none;
@@ -25,7 +27,7 @@
 }
 
 footer {
-    background-color: #7C9584 !important;
+    background-color: #88c7c2 !important;
     overflow: hidden !important;
     width: 100% !important;
     height: 80px !important;
@@ -40,8 +42,8 @@ footer {
 }
 
 #myLogo {
-    width: 100% !important;
-    margin-top: -4px !important;
+    width: 95% !important;
+    margin-top: -13px !important;
 }
 
 .d-none {
@@ -70,7 +72,7 @@ footer {
 }
 
 .section-featured-slider .overlay-enabled article::after {
-    background-color: rgba(94, 94, 94, 0.56) !important;
+    background-color: rgba(94, 94, 94, 0.21) !important;
 }
 
 .fixFont {
@@ -163,40 +165,43 @@ element.style {}
 
 @media only screen and (max-width: 895px) {
     #myLogo {
-        width: 57% !important;
+        width: 47% !important;
         margin-top: -19px !important;
     }
 }
 
 @media only screen and (max-width: 767px) {
     #myLogo {
-        width: 58% !important;
+        width: 47% !important;
         margin-top: -13px !important;
     }
     #changeImg {
-        display: none !important;
-    }
-    #changeImgMobil {
         display: block !important;
+    }
+    #changeImgMobil2 {
+        display: none !important;
     }
 }
 
 @media only screen and (max-width: 500px) {
     #myLogo {
-        width: 61% !important;
+        width: 47% !important;
         margin-top: -13px !important;
     }
     #changeImg {
         display: none !important;
     }
     #changeImgMobil {
+        display: none !important;
+    }
+    #changeImgMobil2 {
         display: block !important;
     }
 }
 
 @media only screen and (max-width: 479px) {
     #myLogo {
-        width: 78% !important;
+        width: 72% !important; 
         margin-top: -9px !important;
     }
     #changeImg {
