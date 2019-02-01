@@ -13,9 +13,7 @@
 #main-slider h3 a {
     /* font-family: "Oxygen" !important; */
 }
-.section-featured-slider h4 {
-    /* font-family: "Oxygen" !important; */
-}
+
 
 .site-branding {
     margin: 0;
@@ -42,8 +40,8 @@ footer {
 }
 
 #myLogo {
-    width: 86% !important;
-    margin-top: -8px !important;
+    width: 100% !important;
+    margin-top: -5px !important;
 }
 
 .d-none {
@@ -55,7 +53,7 @@ footer {
 }
 
 #masthead {
-    padding: 15px 0;
+    padding: 8px 0;
 }
 
 .header-v4 #masthead.sticky-enabled.sticky-header {
@@ -64,7 +62,8 @@ footer {
 
 .header-v4 .main-navigation ul li a {
     color: #616161 !important;
-    font-size: 15px !important;
+    font-size: 17px !important;
+    font-family: "Heebo" !important;
 }
 
 #whiteBackground {
@@ -108,10 +107,7 @@ footer {
     color: #4ea0c5 !important;
 }
 
-.section-featured-slider h4 {
-    color: #fff;
-    font-size: 25px !important;
-}
+
 
 .header-v4 #masthead {
     background-color: white !important;
@@ -154,26 +150,143 @@ footer {
 element.style {}
 
 .header-v4 #masthead {
-    border-bottom: 1px solid #569856 !important;
+    border-bottom: 1px solid #0ea760 !important;
 }
 
 .pager-box cycle-pager-active {
     display: none !important;
 }
 
+.section-featured-slider h3 {
+    /* font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 600;
+    max-width: 100%;
+    display: inline-block; */
+    font-family: "Heebo" !important;
+    font-size: 55px !important;
+}
+.section-featured-slider h4 {
+    color: #fff;
+    font-size: 30px !important;
+    font-family: "Heebo" !important;
+    margin: 0px;
+    line-height: 1;
+}
+.section-featured-slider .cycle-caption {
+    bottom: 9% !important;  
+}
 
+.section-featured-slider .cycle-caption.text-alignleft {
+    left: 9%;
+}
+#MobilNavBars{
+    display: none;
+}
+.ImgBars:hover{
+cursor: pointer;
+}
+#content .section-top-subtitle {
+    /* position: relative;
+    color: #262626;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 18px; */
+    font-family: "Heebo" !important;
+}
+#content .section-title {
+    font-family: "Heebo" !important;
+    font-weight: bold !important; 
+    
+}
+#header-right {
+    margin-top: 3px;
+    margin-right: 0px;
+}
+
+@media only screen and (max-width: 1290px){
+    #myLogo{
+        width: 70% !important;
+        margin-top: -5px !important;
+        margin-left: 68px;
+    }
+}
+/* @media only screen and (max-width: 1200px){
+    .header-v4 #masthead {
+        position: inherit !important;
+        padding: 0 !important;
+        background: #222 !important;
+        
+        padding: 14px 0 !important;
+    }
+    } */
+@media only screen and (max-width: 1170px){
+    #myLogo{
+    
+        width: 70% !important;
+        margin-top: -14px !important;
+        margin-left: 68px;
+    }
+    #mob-menu {
+        display: block !important;
+    }
+    #mob-menu.sidr ul li.has-mega-menu ul {
+		display: block;
+	}
+
+	#mob-menu ul {
+		display: none;
+	}
+
+	.sidr-open #mob-menu .sidr-inner > ul{
+		display: block;
+    }
+    .header-v4 #masthead {
+        position: inherit;
+        padding: 0;
+        /* background: #222; */
+        padding: 21px 0 !important;
+        
+    }
+    .quick-link, .main-navigation {
+        display: none;
+    }
+    #MobilNavBars{
+        display: block;
+    }
+}
+@media only screen and (max-width: 900px){
+    .header-v4 #masthead {
+        position: inherit;
+        padding: 0;
+        background: #222;
+        padding: 14px 0 !important;
+        
+    }
+    #myLogo{
+        width: 60% !important;
+        margin-top: -5px !important;
+        margin-left: 57px;
+    }
+  
+    }
 
 @media only screen and (max-width: 895px) {
     #myLogo {
-        width: 47% !important;
-        margin-top: -19px !important;
+        width: 68% !important;
+        margin-top: -9px !important;
+        margin-left: 55px;
     }
 }
 
 @media only screen and (max-width: 767px) {
     #myLogo {
-        width: 47% !important;
-        margin-top: -13px !important;
+        width: 63% !important;
+        margin-top: -1px !important;
+        margin-left: 37px;
     }
     #changeImg {
         display: block !important;
@@ -181,12 +294,19 @@ element.style {}
     #changeImgMobil2 {
         display: none !important;
     }
+    #main-slider h3 a {
+        font-size: 30px;
+    }
+    .section-featured-slider h4 {
+        font-size: 22px !important;
+    }
 }
 
 @media only screen and (max-width: 500px) {
     #myLogo {
-        width: 47% !important;
-        margin-top: -13px !important;
+        width: 85% !important;
+        margin-top: -4px !important;
+        margin-left: 0px;
     }
     #changeImg {
         display: none !important;
@@ -201,8 +321,9 @@ element.style {}
 
 @media only screen and (max-width: 479px) {
     #myLogo {
-        width: 72% !important; 
-        margin-top: -9px !important;
+        width: 100% !important;
+        margin-top: 5px !important;
+        margin-left: 6px !important;
     }
     #changeImg {
         display: none !important;
@@ -216,10 +337,13 @@ element.style {}
     .section-featured-slider .cycle-caption {
         bottom: 7% !important;
     }
+  
+    .section-featured-slider h4 {
+        font-size: 22px !important;
+        margin-bottom: 5px;
+    }
 }
 
-@media only screen and (max-width: 767px) {
-    #main-slider h3 a {
-        font-size: 30px;
-    }
-} 
+
+
+
