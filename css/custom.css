@@ -165,17 +165,17 @@ element.style {}
     max-width: 100%;
     display: inline-block; */
     font-family: "Heebo" !important;
-    font-size: 55px !important;
+    font-size: 64px !important;
 }
 .section-featured-slider h4 {
     color: #fff;
-    font-size: 30px !important;
+    font-size: 42px !important;
     font-family: "Heebo" !important;
     margin: 0px;
     line-height: 1;
 }
 .section-featured-slider .cycle-caption {
-    bottom: 9% !important;  
+    bottom: 4% !important;  
 }
 
 .section-featured-slider .cycle-caption.text-alignleft {
