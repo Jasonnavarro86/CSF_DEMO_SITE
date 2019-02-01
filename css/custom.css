@@ -175,11 +175,11 @@ element.style {}
     line-height: 1;
 }
 .section-featured-slider .cycle-caption {
-    bottom: 9% !important;  
+    bottom: 20% !important;  
 }
 
 .section-featured-slider .cycle-caption.text-alignleft {
-    left: 8%;
+    left: 20%;
 }
 #MobilNavBars{
     display: none;
@@ -206,12 +206,47 @@ cursor: pointer;
     margin-top: 3px;
     margin-right: 0px;
 }
+@media only screen and (max-width:1718px){
+    .section-featured-slider .cycle-caption {
+        bottom: 9% !important;  
+    }
+    .section-featured-slider .cycle-caption.text-alignleft {
+        left: 13%;
+    }
+}
+@media only screen and (max-width:1550px){
+    .section-featured-slider .cycle-caption {
+        bottom: 7% !important;  
+    }
+    .section-featured-slider .cycle-caption.text-alignleft {
+        left: 12%;
+    }
+}
+@media only screen and (max-width:1440px){
+    .section-featured-slider .cycle-caption {
+        bottom: 7% !important;  
+    }
+    .section-featured-slider .cycle-caption.text-alignleft {
+        left: 10%;
+    }
+}
 
 @media only screen and (max-width: 1290px){
     #myLogo{
         width: 70% !important;
         margin-top: -5px !important;
         margin-left: 68px;
+    }
+    .section-featured-slider h3 {
+        
+        font-family: "Anton" !important;
+        font-size: 54px !important;
+    }
+    .section-featured-slider h4 {
+   
+        font-size: 26px !important;
+        font-family: "anton" !important;
+     
     }
 }
 /* @media only screen and (max-width: 1200px){
