@@ -164,22 +164,22 @@ element.style {}
     font-weight: 600;
     max-width: 100%;
     display: inline-block; */
-    font-family: "Heebo" !important;
-    font-size: 64px !important;
+    font-family: "Anton" !important;
+    font-size: 84px !important;
 }
 .section-featured-slider h4 {
     color: #fff;
-    font-size: 42px !important;
-    font-family: "Heebo" !important;
+    font-size: 46px !important;
+    font-family: "anton" !important;
     margin: 0px;
     line-height: 1;
 }
 .section-featured-slider .cycle-caption {
-    bottom: 4% !important;  
+    bottom: 9% !important;  
 }
 
 .section-featured-slider .cycle-caption.text-alignleft {
-    left: 9%;
+    left: 8%;
 }
 #MobilNavBars{
     display: none;
