@@ -150,7 +150,7 @@ footer {
 element.style {}
 
 .header-v4 #masthead {
-    border-bottom: 1px solid #0ea760 !important;
+    /* border-bottom: 1px solid #0ea760 !important; */
 }
 
 .pager-box cycle-pager-active {
