@@ -5284,6 +5284,9 @@ p {
   .div-block-68 {
     padding-left: 25px;
   }
+  .bold-text-9 {
+    font-size: 31px;
+  }
   .paragraph-8 {
     padding-right: 10px;
   }
@@ -6205,9 +6208,15 @@ p {
     left: -70px;
     width: 262px;
   }
+  .heading-70 {
+    line-height: 31px;
+  }
   .div-block-68 {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  .bold-text-9 {
+    line-height: 20px;
   }
   .paragraph-8 {
     margin-bottom: 0px;
