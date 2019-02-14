@@ -106,38 +106,6 @@ module.exports = isArray;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(51)('wks');
-var uid = __webpack_require__(31);
-var Symbol = __webpack_require__(5).Symbol;
-var USE_SYMBOL = typeof Symbol == 'function';
-
-var $exports = module.exports = function (name) {
-  return store[name] || (store[name] =
-    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
-};
-
-$exports.store = store;
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var freeGlobal = __webpack_require__(101);
-
-/** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-
-/** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')();
-
-module.exports = root;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
@@ -456,6 +424,38 @@ bindLoad();
 module.exports = window.Webflow = Webflow;
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var store = __webpack_require__(51)('wks');
+var uid = __webpack_require__(31);
+var Symbol = __webpack_require__(5).Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function (name) {
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(101);
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
@@ -622,8 +622,8 @@ module.exports = isObjectLike;
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsNative = __webpack_require__(204),
-    getValue = __webpack_require__(207);
+var baseIsNative = __webpack_require__(203),
+    getValue = __webpack_require__(206);
 
 /**
  * Gets the native function at `key` of `object`.
@@ -645,11 +645,11 @@ module.exports = getNative;
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseMatches = __webpack_require__(235),
-    baseMatchesProperty = __webpack_require__(259),
+var baseMatches = __webpack_require__(234),
+    baseMatchesProperty = __webpack_require__(258),
     identity = __webpack_require__(72),
     isArray = __webpack_require__(0),
-    property = __webpack_require__(263);
+    property = __webpack_require__(262);
 
 /**
  * The base implementation of `_.iteratee`.
@@ -773,8 +773,8 @@ var RENDER_PLUGIN = exports.RENDER_PLUGIN = 'RENDER_PLUGIN';
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(26),
-    getRawTag = __webpack_require__(196),
-    objectToString = __webpack_require__(197);
+    getRawTag = __webpack_require__(195),
+    objectToString = __webpack_require__(196);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -1636,7 +1636,7 @@ exports.default = timm;
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(2);
+var root = __webpack_require__(3);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -1745,7 +1745,7 @@ exports.f = {}.propertyIsEnumerable;
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(184);
+var _defineProperty = __webpack_require__(183);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -1775,7 +1775,7 @@ exports.default = function (obj, key, value) {
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(187);
+var _assign = __webpack_require__(186);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -1843,15 +1843,15 @@ var _get = __webpack_require__(36);
 
 var _get2 = _interopRequireDefault(_get);
 
-var _defaultTo = __webpack_require__(222);
+var _defaultTo = __webpack_require__(221);
 
 var _defaultTo2 = _interopRequireDefault(_defaultTo);
 
-var _reduce = __webpack_require__(223);
+var _reduce = __webpack_require__(222);
 
 var _reduce2 = _interopRequireDefault(_reduce);
 
-var _findLast = __webpack_require__(266);
+var _findLast = __webpack_require__(265);
 
 var _findLast2 = _interopRequireDefault(_findLast);
 
@@ -2916,7 +2916,7 @@ module.exports = get;
 
 var isArray = __webpack_require__(0),
     isKey = __webpack_require__(60),
-    stringToPath = __webpack_require__(198),
+    stringToPath = __webpack_require__(197),
     toString = __webpack_require__(104);
 
 /**
@@ -2988,11 +2988,11 @@ module.exports = nativeCreate;
 /* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var listCacheClear = __webpack_require__(212),
-    listCacheDelete = __webpack_require__(213),
-    listCacheGet = __webpack_require__(214),
-    listCacheHas = __webpack_require__(215),
-    listCacheSet = __webpack_require__(216);
+var listCacheClear = __webpack_require__(211),
+    listCacheDelete = __webpack_require__(212),
+    listCacheGet = __webpack_require__(213),
+    listCacheHas = __webpack_require__(214),
+    listCacheSet = __webpack_require__(215);
 
 /**
  * Creates an list cache object.
@@ -3053,7 +3053,7 @@ module.exports = assocIndexOf;
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isKeyable = __webpack_require__(218);
+var isKeyable = __webpack_require__(217);
 
 /**
  * Gets the data for `map`.
@@ -3120,7 +3120,7 @@ module.exports = keys;
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(228),
+var baseIsArguments = __webpack_require__(227),
     isObjectLike = __webpack_require__(11);
 
 /** Used for built-in method references. */
@@ -3310,7 +3310,7 @@ module.exports = (
 
 var def = __webpack_require__(7).f;
 var has = __webpack_require__(9);
-var TAG = __webpack_require__(1)('toStringTag');
+var TAG = __webpack_require__(2)('toStringTag');
 
 module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -3332,7 +3332,7 @@ module.exports = function (it) {
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.f = __webpack_require__(1);
+exports.f = __webpack_require__(2);
 
 
 /***/ }),
@@ -3453,11 +3453,11 @@ module.exports = isKey;
 /* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mapCacheClear = __webpack_require__(201),
-    mapCacheDelete = __webpack_require__(217),
-    mapCacheGet = __webpack_require__(219),
-    mapCacheHas = __webpack_require__(220),
-    mapCacheSet = __webpack_require__(221);
+var mapCacheClear = __webpack_require__(200),
+    mapCacheDelete = __webpack_require__(216),
+    mapCacheGet = __webpack_require__(218),
+    mapCacheHas = __webpack_require__(219),
+    mapCacheSet = __webpack_require__(220);
 
 /**
  * Creates a map cache object to store key-value pairs.
@@ -3535,7 +3535,7 @@ module.exports = eq;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(12),
-    root = __webpack_require__(2);
+    root = __webpack_require__(3);
 
 /* Built-in method references that are verified to be native. */
 var Map = getNative(root, 'Map');
@@ -3547,8 +3547,8 @@ module.exports = Map;
 /* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(2),
-    stubFalse = __webpack_require__(229);
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(3),
+    stubFalse = __webpack_require__(228);
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -3623,9 +3623,9 @@ module.exports = isIndex;
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(230),
-    baseUnary = __webpack_require__(231),
-    nodeUtil = __webpack_require__(232);
+var baseIsTypedArray = __webpack_require__(229),
+    baseUnary = __webpack_require__(230),
+    nodeUtil = __webpack_require__(231);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -3698,7 +3698,7 @@ module.exports = isLength;
 /***/ (function(module, exports, __webpack_require__) {
 
 var isPrototype = __webpack_require__(69),
-    nativeKeys = __webpack_require__(233);
+    nativeKeys = __webpack_require__(232);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -3783,10 +3783,10 @@ module.exports = arrayPush;
 /* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DataView = __webpack_require__(255),
+var DataView = __webpack_require__(254),
     Map = __webpack_require__(63),
-    Promise = __webpack_require__(256),
-    Set = __webpack_require__(257),
+    Promise = __webpack_require__(255),
+    Set = __webpack_require__(256),
     WeakMap = __webpack_require__(118),
     baseGetTag = __webpack_require__(17),
     toSource = __webpack_require__(103);
@@ -3874,7 +3874,7 @@ module.exports = identity;
 /* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toFinite = __webpack_require__(268);
+var toFinite = __webpack_require__(267);
 
 /**
  * Converts `value` to an integer.
@@ -4866,7 +4866,7 @@ var Iterators = __webpack_require__(24);
 var $iterCreate = __webpack_require__(140);
 var setToStringTag = __webpack_require__(53);
 var getPrototypeOf = __webpack_require__(145);
-var ITERATOR = __webpack_require__(1)('iterator');
+var ITERATOR = __webpack_require__(2)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -5097,7 +5097,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 "use strict";
 
 
-var IXEvents = __webpack_require__(162);
+var IXEvents = __webpack_require__(161);
 
 function dispatchCustomEvent(element, eventName) {
   var event = document.createEvent('CustomEvent');
@@ -5145,9 +5145,9 @@ module.exports = api;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(178);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(98);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["b"]; });
@@ -5182,7 +5182,7 @@ if (false) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ActionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = createStore;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(174);
 
 
 
@@ -5437,9 +5437,9 @@ function createStore(reducer, preloadedState, enhancer) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseGetTag_js__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isObjectLike_js__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseGetTag_js__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isObjectLike_js__ = __webpack_require__(173);
 
 
 
@@ -5509,7 +5509,7 @@ function isPlainObject(value) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__root_js__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__root_js__ = __webpack_require__(167);
 
 
 /** Built-in value references. */
@@ -5600,7 +5600,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.optimizeFloat = optimizeFloat;
 exports.applyEasing = applyEasing;
 
-var _IX2Easings = __webpack_require__(194);
+var _IX2Easings = __webpack_require__(193);
 
 var easings = _interopRequireWildcard(_IX2Easings);
 
@@ -5830,7 +5830,7 @@ module.exports = arrayMap;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseForOwn = __webpack_require__(108),
-    createBaseEach = __webpack_require__(234);
+    createBaseEach = __webpack_require__(233);
 
 /**
  * The base implementation of `_.forEach` without support for iteratee shorthands.
@@ -5849,7 +5849,7 @@ module.exports = baseEach;
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFor = __webpack_require__(225),
+var baseFor = __webpack_require__(224),
     keys = __webpack_require__(43);
 
 /**
@@ -5871,7 +5871,7 @@ module.exports = baseForOwn;
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(227),
+var baseTimes = __webpack_require__(226),
     isArguments = __webpack_require__(44),
     isArray = __webpack_require__(0),
     isBuffer = __webpack_require__(64),
@@ -5976,11 +5976,11 @@ module.exports = overArg;
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(40),
-    stackClear = __webpack_require__(237),
-    stackDelete = __webpack_require__(238),
-    stackGet = __webpack_require__(239),
-    stackHas = __webpack_require__(240),
-    stackSet = __webpack_require__(241);
+    stackClear = __webpack_require__(236),
+    stackDelete = __webpack_require__(237),
+    stackGet = __webpack_require__(238),
+    stackHas = __webpack_require__(239),
+    stackSet = __webpack_require__(240);
 
 /**
  * Creates a stack cache object to store key-value pairs.
@@ -6008,7 +6008,7 @@ module.exports = Stack;
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsEqualDeep = __webpack_require__(242),
+var baseIsEqualDeep = __webpack_require__(241),
     isObjectLike = __webpack_require__(11);
 
 /**
@@ -6042,9 +6042,9 @@ module.exports = baseIsEqual;
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SetCache = __webpack_require__(243),
-    arraySome = __webpack_require__(246),
-    cacheHas = __webpack_require__(247);
+var SetCache = __webpack_require__(242),
+    arraySome = __webpack_require__(245),
+    cacheHas = __webpack_require__(246);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -6157,7 +6157,7 @@ module.exports = baseGetAllKeys;
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayFilter = __webpack_require__(254),
+var arrayFilter = __webpack_require__(253),
     stubArray = __webpack_require__(117);
 
 /** Used for built-in method references. */
@@ -6223,7 +6223,7 @@ module.exports = stubArray;
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(12),
-    root = __webpack_require__(2);
+    root = __webpack_require__(3);
 
 /* Built-in method references that are verified to be native. */
 var WeakMap = getNative(root, 'WeakMap');
@@ -6378,7 +6378,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.cleanupPlugin = exports.renderPlugin = exports.createPluginInstance = exports.getPluginDestination = exports.getPluginOrigin = exports.getPluginConfig = undefined;
 exports.isPluginType = isPluginType;
 
-var _IX2LottieUtils = __webpack_require__(269);
+var _IX2LottieUtils = __webpack_require__(268);
 
 var _IX2BrowserSupport = __webpack_require__(75);
 
@@ -6429,7 +6429,7 @@ var cleanupPlugin = exports.cleanupPlugin = pluginMethod('cleanup');
 /***/ (function(module, exports, __webpack_require__) {
 
 var createFind = __webpack_require__(122),
-    findIndex = __webpack_require__(270);
+    findIndex = __webpack_require__(269);
 
 /**
  * Iterates over elements of `collection`, returning the first element
@@ -6479,7 +6479,7 @@ module.exports = find;
 "use strict";
 
 
-var _toConsumableArray2 = __webpack_require__(272);
+var _toConsumableArray2 = __webpack_require__(271);
 
 var _toConsumableArray3 = _interopRequireDefault2(_toConsumableArray2);
 
@@ -6493,7 +6493,7 @@ var _extends2 = __webpack_require__(34);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _objectWithoutProperties2 = __webpack_require__(282);
+var _objectWithoutProperties2 = __webpack_require__(281);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
@@ -6512,35 +6512,35 @@ var _get = __webpack_require__(36);
 
 var _get2 = _interopRequireDefault(_get);
 
-var _size = __webpack_require__(283);
+var _size = __webpack_require__(282);
 
 var _size2 = _interopRequireDefault(_size);
 
-var _omitBy = __webpack_require__(289);
+var _omitBy = __webpack_require__(288);
 
 var _omitBy2 = _interopRequireDefault(_omitBy);
 
-var _isEmpty = __webpack_require__(301);
+var _isEmpty = __webpack_require__(300);
 
 var _isEmpty2 = _interopRequireDefault(_isEmpty);
 
-var _mapValues = __webpack_require__(302);
+var _mapValues = __webpack_require__(301);
 
 var _mapValues2 = _interopRequireDefault(_mapValues);
 
-var _forEach = __webpack_require__(303);
+var _forEach = __webpack_require__(302);
 
 var _forEach2 = _interopRequireDefault(_forEach);
 
-var _endsWith = __webpack_require__(306);
+var _endsWith = __webpack_require__(305);
 
 var _endsWith2 = _interopRequireDefault(_endsWith);
 
-var _throttle = __webpack_require__(307);
+var _throttle = __webpack_require__(306);
 
 var _throttle2 = _interopRequireDefault(_throttle);
 
-var _shallowEqual = __webpack_require__(310);
+var _shallowEqual = __webpack_require__(309);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
@@ -6552,7 +6552,7 @@ var _IX2EngineEventTypes = __webpack_require__(76);
 
 var _IX2EngineActions = __webpack_require__(77);
 
-var _IX2BrowserApi = __webpack_require__(312);
+var _IX2BrowserApi = __webpack_require__(311);
 
 var elementApi = _interopRequireWildcard(_IX2BrowserApi);
 
@@ -6560,7 +6560,7 @@ var _IX2EngineConstants = __webpack_require__(16);
 
 var _IX2EngineItemTypes = __webpack_require__(45);
 
-var _IX2VanillaEvents = __webpack_require__(313);
+var _IX2VanillaEvents = __webpack_require__(312);
 
 var _IX2VanillaEvents2 = _interopRequireDefault(_IX2VanillaEvents);
 
@@ -7573,8 +7573,8 @@ module.exports = baseCreate;
 /* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var metaMap = __webpack_require__(326),
-    noop = __webpack_require__(327);
+var metaMap = __webpack_require__(325),
+    noop = __webpack_require__(326);
 
 /**
  * Gets metadata for `func`.
@@ -7594,7 +7594,7 @@ module.exports = getData;
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var realNames = __webpack_require__(328);
+var realNames = __webpack_require__(327);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -7632,14 +7632,15 @@ module.exports = getFuncName;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(134);
-__webpack_require__(161);
-__webpack_require__(163);
-__webpack_require__(165);
+__webpack_require__(162);
+__webpack_require__(164);
+__webpack_require__(333);
 __webpack_require__(334);
 __webpack_require__(335);
 __webpack_require__(336);
 __webpack_require__(337);
-module.exports = __webpack_require__(338);
+__webpack_require__(338);
+module.exports = __webpack_require__(339);
 
 
 /***/ }),
@@ -7650,79 +7651,292 @@ module.exports = __webpack_require__(338);
 
 
 /**
- * Webflow: Brand pages on the subdomain
+ * Webflow: Dropdown component
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
+var IXEvents = __webpack_require__(93);
 
-Webflow.define('brand', module.exports = function ($) {
+Webflow.define('dropdown', module.exports = function ($, _) {
   var api = {};
-  var doc = document;
-  var $html = $('html');
-  var $body = $('body');
-  var namespace = '.w-webflow-badge';
-  var location = window.location;
-  var isPhantom = /PhantomJS/i.test(navigator.userAgent);
-  var fullScreenEvents = 'fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange';
-  var brandElement;
+  var $doc = $(document);
+  var $dropdowns;
+  var designer;
+  var inApp = Webflow.env();
+  var touch = Webflow.env.touch;
+  var namespace = '.w-dropdown';
+  var stateOpen = 'w--open';
+  var closeEvent = 'w-close' + namespace;
+  var ix = IXEvents.triggers;
+  var defaultZIndex = 900; // @dropdown-depth
+  var inPreview = false;
 
   // -----------------------------------
   // Module methods
 
-  api.ready = function () {
-    var shouldBrand = $html.attr('data-wf-status');
-    var publishedDomain = $html.attr('data-wf-domain') || '';
-    if (/\.webflow\.io$/i.test(publishedDomain) && location.hostname !== publishedDomain) {
-      shouldBrand = true;
-    }
-    if (shouldBrand && !isPhantom) {
-      brandElement = brandElement || createBadge();
-      ensureBrand();
-      setTimeout(ensureBrand, 500);
+  api.ready = init;
 
-      $(doc).off(fullScreenEvents, onFullScreenChange).on(fullScreenEvents, onFullScreenChange);
+  api.design = function () {
+    // Close all when returning from preview
+    if (inPreview) {
+      closeAll();
     }
+    inPreview = false;
+    init();
   };
 
-  function onFullScreenChange() {
-    var fullScreen = doc.fullScreen || doc.mozFullScreen || doc.webkitIsFullScreen || doc.msFullscreenElement || Boolean(doc.webkitFullscreenElement);
-    $(brandElement).attr('style', fullScreen ? 'display: none !important;' : '');
+  api.preview = function () {
+    inPreview = true;
+    init();
+  };
+
+  // -----------------------------------
+  // Private methods
+
+  function init() {
+    designer = inApp && Webflow.env('design');
+
+    // Find all instances on the page
+    $dropdowns = $doc.find(namespace);
+    $dropdowns.each(build);
   }
 
-  function createBadge() {
-    var $brand = $('<a class="w-webflow-badge"></a>').attr('href', 'https://webflow.com?utm_campaign=brandjs');
+  function build(i, el) {
+    var $el = $(el);
 
-    var $logoArt = $('<img>').attr('src', 'https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-icon.60efbf6ec9.svg').css({
-      marginRight: '8px',
-      width: '16px'
-    });
+    // Store state in data
+    var data = $.data(el, namespace);
+    if (!data) {
+      data = $.data(el, namespace, { open: false, el: $el, config: {} });
+    }
+    data.list = $el.children('.w-dropdown-list');
+    data.toggle = $el.children('.w-dropdown-toggle');
+    data.links = data.list.children('.w-dropdown-link');
+    data.outside = outside(data);
+    data.complete = complete(data);
+    data.leave = leave(data);
+    data.moveOutside = moveOutside(data);
 
-    var $logoText = $('<img>').attr('src', 'https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg');
+    // Remove old events
+    $el.off(namespace);
+    data.toggle.off(namespace);
 
-    $brand.append($logoArt, $logoText);
-    return $brand[0];
-  }
+    // Set config from data attributes
+    configure(data);
 
-  function ensureBrand() {
-    var found = $body.children(namespace);
-    var match = found.length && found.get(0) === brandElement;
-    var inEditor = Webflow.env('editor');
-    if (match) {
-      // Remove brand when Editor is active
-      if (inEditor) {
-        found.remove();
+    if (data.nav) {
+      data.nav.off(namespace);
+    }
+    data.nav = $el.closest('.w-nav');
+    data.nav.on(closeEvent, handler(data));
+
+    // Add events based on mode
+    if (designer) {
+      $el.on('setting' + namespace, handler(data));
+    } else {
+      data.toggle.on(mouseOrTap() + namespace, toggle(data));
+      if (data.config.hover) {
+        data.toggle.on('mouseenter' + namespace, enter(data));
       }
-      // Exit early, brand is in place
+      $el.on(closeEvent, handler(data));
+
+      // Close in preview mode and clean the data.hovering state
+      if (inApp) {
+        data.hovering = false;
+        close(data);
+      }
+    }
+  }
+
+  function configure(data) {
+    // Determine if z-index should be managed
+    var zIndex = Number(data.el.css('z-index'));
+    data.manageZ = zIndex === defaultZIndex || zIndex === defaultZIndex + 1;
+
+    data.config = {
+      hover: (data.el.attr('data-hover') === true || data.el.attr('data-hover') === '1') && !touch,
+      delay: Number(data.el.attr('data-delay')) || 0
+    };
+  }
+
+  function handler(data) {
+    return function (evt, options) {
+      options = options || {};
+
+      if (evt.type === 'w-close') {
+        return close(data);
+      }
+
+      if (evt.type === 'setting') {
+        configure(data);
+        options.open === true && open(data, true);
+        options.open === false && close(data, true);
+        return;
+      }
+    };
+  }
+
+  function toggle(data) {
+    return _.debounce(function () {
+      data.open ? close(data) : open(data);
+    });
+  }
+
+  function open(data) {
+    if (data.open) {
       return;
     }
-    // Remove any invalid brand elements
-    if (found.length) {
-      found.remove();
+    closeOthers(data);
+    data.open = true;
+    data.list.addClass(stateOpen);
+    data.toggle.addClass(stateOpen);
+    ix.intro(0, data.el[0]);
+    Webflow.redraw.up();
+
+    // Increase z-index to keep above other managed dropdowns
+    data.manageZ && data.el.css('z-index', defaultZIndex + 1);
+
+    // Listen for tap outside events
+    var isEditor = Webflow.env('editor');
+    if (!designer) {
+      $doc.on(mouseOrTap() + namespace, data.outside);
     }
-    // Append the brand (unless Editor is active)
-    if (!inEditor) {
-      $body.append(brandElement);
+    if (data.hovering && !isEditor) {
+      data.el.on('mouseleave' + namespace, data.leave);
     }
+    if (data.hovering && isEditor) {
+      $doc.on('mousemove' + namespace, data.moveOutside);
+    }
+
+    // Clear previous delay
+    window.clearTimeout(data.delayId);
+  }
+
+  function close(data, immediate) {
+    if (!data.open) {
+      return;
+    }
+
+    // Do not close hover-based menus if currently hovering
+    if (data.config.hover && data.hovering) {
+      return;
+    }
+
+    data.open = false;
+    var config = data.config;
+    ix.outro(0, data.el[0]);
+
+    // Stop listening for tap outside events
+    $doc.off(mouseOrTap() + namespace, data.outside);
+    data.el.off('mouseleave' + namespace, data.leave);
+    $doc.off('mousemove' + namespace, data.moveOutside);
+
+    // Clear previous delay
+    window.clearTimeout(data.delayId);
+
+    // Skip delay during immediate
+    if (!config.delay || immediate) {
+      return data.complete();
+    }
+
+    // Optionally wait for delay before close
+    data.delayId = window.setTimeout(data.complete, config.delay);
+  }
+
+  function closeAll() {
+    $doc.find(namespace).each(function (i, el) {
+      $(el).triggerHandler(closeEvent);
+    });
+  }
+
+  function closeOthers(data) {
+    var self = data.el[0];
+    $dropdowns.each(function (i, other) {
+      var $other = $(other);
+      if ($other.is(self) || $other.has(self).length) {
+        return;
+      }
+      $other.triggerHandler(closeEvent);
+    });
+  }
+
+  function outside(data) {
+    // Unbind previous tap handler if it exists
+    if (data.outside) {
+      $doc.off(mouseOrTap() + namespace, data.outside);
+    }
+
+    // Close menu when tapped outside
+    return _.debounce(function (evt) {
+      if (!data.open) {
+        return;
+      }
+      var $target = $(evt.target);
+      if ($target.closest('.w-dropdown-toggle').length) {
+        return;
+      }
+      var isEventOutsideDropdowns = $.inArray(data.el[0], $target.parents(namespace)) === -1;
+      var isEditor = Webflow.env('editor');
+      if (isEventOutsideDropdowns) {
+        if (isEditor) {
+          var isEventOnDetachedSvg = $target.parents().length === 1 && $target.parents('svg').length === 1;
+          var isEventOnHoverControls = $target.parents('.w-editor-bem-EditorHoverControls').length;
+          if (isEventOnDetachedSvg || isEventOnHoverControls) {
+            return;
+          }
+        }
+        close(data);
+      }
+    });
+  }
+
+  function complete(data) {
+    return function () {
+      data.list.removeClass(stateOpen);
+      data.toggle.removeClass(stateOpen);
+
+      // Reset z-index for managed dropdowns
+      data.manageZ && data.el.css('z-index', '');
+    };
+  }
+
+  function enter(data) {
+    return function () {
+      data.hovering = true;
+      open(data);
+    };
+  }
+
+  function leave(data) {
+    return function () {
+      data.hovering = false;
+      close(data);
+    };
+  }
+
+  function moveOutside(data) {
+    return _.debounce(function (evt) {
+      if (!data.open) {
+        return;
+      }
+      var $target = $(evt.target);
+      var isEventOutsideDropdowns = $.inArray(data.el[0], $target.parents(namespace)) === -1;
+      if (isEventOutsideDropdowns) {
+        var isEventOnHoverControls = $target.parents('.w-editor-bem-EditorHoverControls').length;
+        var isEventOnHoverToolbar = $target.parents('.w-editor-bem-RTToolbar').length;
+        var $editorOverlay = $('.w-editor-bem-EditorOverlay');
+        var isDropdownInEdition = $editorOverlay.find('.w-editor-edit-outline').length || $editorOverlay.find('.w-editor-bem-RTToolbar').length;
+        if (isEventOnHoverControls || isEventOnHoverToolbar || isDropdownInEdition) {
+          return;
+        }
+        data.hovering = false;
+        close(data);
+      }
+    });
+  }
+
+  function mouseOrTap() {
+    return touch ? 'tap' : 'mouseup';
   }
 
   // Export module
@@ -8150,7 +8364,7 @@ var setToStringTag = __webpack_require__(53);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(14)(IteratorPrototype, __webpack_require__(1)('iterator'), function () { return this; });
+__webpack_require__(14)(IteratorPrototype, __webpack_require__(2)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -8254,7 +8468,7 @@ __webpack_require__(147);
 var global = __webpack_require__(5);
 var hide = __webpack_require__(14);
 var Iterators = __webpack_require__(24);
-var TO_STRING_TAG = __webpack_require__(1)('toStringTag');
+var TO_STRING_TAG = __webpack_require__(2)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
   'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -8362,7 +8576,7 @@ var $fails = __webpack_require__(22);
 var shared = __webpack_require__(51);
 var setToStringTag = __webpack_require__(53);
 var uid = __webpack_require__(31);
-var wks = __webpack_require__(1);
+var wks = __webpack_require__(2);
 var wksExt = __webpack_require__(55);
 var wksDefine = __webpack_require__(56);
 var enumKeys = __webpack_require__(154);
@@ -8752,306 +8966,6 @@ __webpack_require__(56)('observable');
 
 
 /**
- * Webflow: Dropdown component
- */
-
-var Webflow = __webpack_require__(3);
-var IXEvents = __webpack_require__(93);
-
-Webflow.define('dropdown', module.exports = function ($, _) {
-  var api = {};
-  var $doc = $(document);
-  var $dropdowns;
-  var designer;
-  var inApp = Webflow.env();
-  var touch = Webflow.env.touch;
-  var namespace = '.w-dropdown';
-  var stateOpen = 'w--open';
-  var closeEvent = 'w-close' + namespace;
-  var ix = IXEvents.triggers;
-  var defaultZIndex = 900; // @dropdown-depth
-  var inPreview = false;
-
-  // -----------------------------------
-  // Module methods
-
-  api.ready = init;
-
-  api.design = function () {
-    // Close all when returning from preview
-    if (inPreview) {
-      closeAll();
-    }
-    inPreview = false;
-    init();
-  };
-
-  api.preview = function () {
-    inPreview = true;
-    init();
-  };
-
-  // -----------------------------------
-  // Private methods
-
-  function init() {
-    designer = inApp && Webflow.env('design');
-
-    // Find all instances on the page
-    $dropdowns = $doc.find(namespace);
-    $dropdowns.each(build);
-  }
-
-  function build(i, el) {
-    var $el = $(el);
-
-    // Store state in data
-    var data = $.data(el, namespace);
-    if (!data) {
-      data = $.data(el, namespace, { open: false, el: $el, config: {} });
-    }
-    data.list = $el.children('.w-dropdown-list');
-    data.toggle = $el.children('.w-dropdown-toggle');
-    data.links = data.list.children('.w-dropdown-link');
-    data.outside = outside(data);
-    data.complete = complete(data);
-    data.leave = leave(data);
-    data.moveOutside = moveOutside(data);
-
-    // Remove old events
-    $el.off(namespace);
-    data.toggle.off(namespace);
-
-    // Set config from data attributes
-    configure(data);
-
-    if (data.nav) {
-      data.nav.off(namespace);
-    }
-    data.nav = $el.closest('.w-nav');
-    data.nav.on(closeEvent, handler(data));
-
-    // Add events based on mode
-    if (designer) {
-      $el.on('setting' + namespace, handler(data));
-    } else {
-      data.toggle.on(mouseOrTap() + namespace, toggle(data));
-      if (data.config.hover) {
-        data.toggle.on('mouseenter' + namespace, enter(data));
-      }
-      $el.on(closeEvent, handler(data));
-
-      // Close in preview mode and clean the data.hovering state
-      if (inApp) {
-        data.hovering = false;
-        close(data);
-      }
-    }
-  }
-
-  function configure(data) {
-    // Determine if z-index should be managed
-    var zIndex = Number(data.el.css('z-index'));
-    data.manageZ = zIndex === defaultZIndex || zIndex === defaultZIndex + 1;
-
-    data.config = {
-      hover: (data.el.attr('data-hover') === true || data.el.attr('data-hover') === '1') && !touch,
-      delay: Number(data.el.attr('data-delay')) || 0
-    };
-  }
-
-  function handler(data) {
-    return function (evt, options) {
-      options = options || {};
-
-      if (evt.type === 'w-close') {
-        return close(data);
-      }
-
-      if (evt.type === 'setting') {
-        configure(data);
-        options.open === true && open(data, true);
-        options.open === false && close(data, true);
-        return;
-      }
-    };
-  }
-
-  function toggle(data) {
-    return _.debounce(function () {
-      data.open ? close(data) : open(data);
-    });
-  }
-
-  function open(data) {
-    if (data.open) {
-      return;
-    }
-    closeOthers(data);
-    data.open = true;
-    data.list.addClass(stateOpen);
-    data.toggle.addClass(stateOpen);
-    ix.intro(0, data.el[0]);
-    Webflow.redraw.up();
-
-    // Increase z-index to keep above other managed dropdowns
-    data.manageZ && data.el.css('z-index', defaultZIndex + 1);
-
-    // Listen for tap outside events
-    var isEditor = Webflow.env('editor');
-    if (!designer) {
-      $doc.on(mouseOrTap() + namespace, data.outside);
-    }
-    if (data.hovering && !isEditor) {
-      data.el.on('mouseleave' + namespace, data.leave);
-    }
-    if (data.hovering && isEditor) {
-      $doc.on('mousemove' + namespace, data.moveOutside);
-    }
-
-    // Clear previous delay
-    window.clearTimeout(data.delayId);
-  }
-
-  function close(data, immediate) {
-    if (!data.open) {
-      return;
-    }
-
-    // Do not close hover-based menus if currently hovering
-    if (data.config.hover && data.hovering) {
-      return;
-    }
-
-    data.open = false;
-    var config = data.config;
-    ix.outro(0, data.el[0]);
-
-    // Stop listening for tap outside events
-    $doc.off(mouseOrTap() + namespace, data.outside);
-    data.el.off('mouseleave' + namespace, data.leave);
-    $doc.off('mousemove' + namespace, data.moveOutside);
-
-    // Clear previous delay
-    window.clearTimeout(data.delayId);
-
-    // Skip delay during immediate
-    if (!config.delay || immediate) {
-      return data.complete();
-    }
-
-    // Optionally wait for delay before close
-    data.delayId = window.setTimeout(data.complete, config.delay);
-  }
-
-  function closeAll() {
-    $doc.find(namespace).each(function (i, el) {
-      $(el).triggerHandler(closeEvent);
-    });
-  }
-
-  function closeOthers(data) {
-    var self = data.el[0];
-    $dropdowns.each(function (i, other) {
-      var $other = $(other);
-      if ($other.is(self) || $other.has(self).length) {
-        return;
-      }
-      $other.triggerHandler(closeEvent);
-    });
-  }
-
-  function outside(data) {
-    // Unbind previous tap handler if it exists
-    if (data.outside) {
-      $doc.off(mouseOrTap() + namespace, data.outside);
-    }
-
-    // Close menu when tapped outside
-    return _.debounce(function (evt) {
-      if (!data.open) {
-        return;
-      }
-      var $target = $(evt.target);
-      if ($target.closest('.w-dropdown-toggle').length) {
-        return;
-      }
-      var isEventOutsideDropdowns = $.inArray(data.el[0], $target.parents(namespace)) === -1;
-      var isEditor = Webflow.env('editor');
-      if (isEventOutsideDropdowns) {
-        if (isEditor) {
-          var isEventOnDetachedSvg = $target.parents().length === 1 && $target.parents('svg').length === 1;
-          var isEventOnHoverControls = $target.parents('.w-editor-bem-EditorHoverControls').length;
-          if (isEventOnDetachedSvg || isEventOnHoverControls) {
-            return;
-          }
-        }
-        close(data);
-      }
-    });
-  }
-
-  function complete(data) {
-    return function () {
-      data.list.removeClass(stateOpen);
-      data.toggle.removeClass(stateOpen);
-
-      // Reset z-index for managed dropdowns
-      data.manageZ && data.el.css('z-index', '');
-    };
-  }
-
-  function enter(data) {
-    return function () {
-      data.hovering = true;
-      open(data);
-    };
-  }
-
-  function leave(data) {
-    return function () {
-      data.hovering = false;
-      close(data);
-    };
-  }
-
-  function moveOutside(data) {
-    return _.debounce(function (evt) {
-      if (!data.open) {
-        return;
-      }
-      var $target = $(evt.target);
-      var isEventOutsideDropdowns = $.inArray(data.el[0], $target.parents(namespace)) === -1;
-      if (isEventOutsideDropdowns) {
-        var isEventOnHoverControls = $target.parents('.w-editor-bem-EditorHoverControls').length;
-        var isEventOnHoverToolbar = $target.parents('.w-editor-bem-RTToolbar').length;
-        var $editorOverlay = $('.w-editor-bem-EditorOverlay');
-        var isDropdownInEdition = $editorOverlay.find('.w-editor-edit-outline').length || $editorOverlay.find('.w-editor-bem-RTToolbar').length;
-        if (isEventOnHoverControls || isEventOnHoverToolbar || isDropdownInEdition) {
-          return;
-        }
-        data.hovering = false;
-        close(data);
-      }
-    });
-  }
-
-  function mouseOrTap() {
-    return touch ? 'tap' : 'mouseup';
-  }
-
-  // Export module
-  return api;
-});
-
-/***/ }),
-/* 162 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
  * Webflow: IX Event triggers for other modules
  */
 
@@ -9119,7 +9033,7 @@ api.async();
 module.exports = api;
 
 /***/ }),
-/* 163 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9129,13 +9043,13 @@ module.exports = api;
  * Webflow: Forms
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
 
 Webflow.define('forms', module.exports = function ($, _) {
   var api = {};
 
   // Cross-Domain AJAX for IE8
-  __webpack_require__(164);
+  __webpack_require__(163);
 
   var $doc = $(document);
   var $forms;
@@ -9613,7 +9527,7 @@ Webflow.define('forms', module.exports = function ($, _) {
 });
 
 /***/ }),
-/* 164 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9675,7 +9589,7 @@ module.exports = function ($) {
 }(window.jQuery);
 
 /***/ }),
-/* 165 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9685,8 +9599,8 @@ module.exports = function ($) {
  * Webflow: Interactions 2
  */
 
-var Webflow = __webpack_require__(3);
-var ix2 = __webpack_require__(166);
+var Webflow = __webpack_require__(1);
+var ix2 = __webpack_require__(165);
 
 ix2.setEnv(Webflow.env);
 
@@ -9695,7 +9609,7 @@ Webflow.define('ix2', module.exports = function () {
 });
 
 /***/ }),
-/* 166 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9708,7 +9622,7 @@ exports.actions = exports.store = exports.destroy = exports.init = exports.setEn
 
 var _redux = __webpack_require__(94);
 
-var _IX2Reducer = __webpack_require__(181);
+var _IX2Reducer = __webpack_require__(180);
 
 var _IX2Reducer2 = _interopRequireDefault(_IX2Reducer);
 
@@ -9758,13 +9672,13 @@ exports.store = store;
 exports.actions = actions;
 
 /***/ }),
-/* 167 */
+/* 166 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(170);
 
 
 
@@ -9796,11 +9710,11 @@ function baseGetTag(value) {
 
 
 /***/ }),
-/* 168 */
+/* 167 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__ = __webpack_require__(168);
 
 
 /** Detect free variable `self`. */
@@ -9813,7 +9727,7 @@ var root = __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__["a" /* default */] || fr
 
 
 /***/ }),
-/* 169 */
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9825,7 +9739,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(58)))
 
 /***/ }),
-/* 170 */
+/* 169 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9879,7 +9793,7 @@ function getRawTag(value) {
 
 
 /***/ }),
-/* 171 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9908,11 +9822,11 @@ function objectToString(value) {
 
 
 /***/ }),
-/* 172 */
+/* 171 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overArg_js__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overArg_js__ = __webpack_require__(172);
 
 
 /** Built-in value references. */
@@ -9922,7 +9836,7 @@ var getPrototype = Object(__WEBPACK_IMPORTED_MODULE_0__overArg_js__["a" /* defau
 
 
 /***/ }),
-/* 173 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9944,7 +9858,7 @@ function overArg(func, transform) {
 
 
 /***/ }),
-/* 174 */
+/* 173 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9980,11 +9894,11 @@ function isObjectLike(value) {
 
 
 /***/ }),
-/* 175 */
+/* 174 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(177);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(176);
 /* global window */
 
 
@@ -10005,10 +9919,10 @@ if (typeof self !== 'undefined') {
 var result = Object(__WEBPACK_IMPORTED_MODULE_0__ponyfill_js__["a" /* default */])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(58), __webpack_require__(176)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(58), __webpack_require__(175)(module)))
 
 /***/ }),
-/* 176 */
+/* 175 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -10038,7 +9952,7 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 177 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10063,7 +9977,7 @@ function symbolObservablePonyfill(root) {
 
 
 /***/ }),
-/* 178 */
+/* 177 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10202,7 +10116,7 @@ function combineReducers(reducers) {
 }
 
 /***/ }),
-/* 179 */
+/* 178 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10256,7 +10170,7 @@ function bindActionCreators(actionCreators, dispatch) {
 }
 
 /***/ }),
-/* 180 */
+/* 179 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -10312,7 +10226,7 @@ function applyMiddleware() {
 }
 
 /***/ }),
-/* 181 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10324,17 +10238,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(94);
 
-var _IX2DataReducer = __webpack_require__(182);
+var _IX2DataReducer = __webpack_require__(181);
 
-var _IX2RequestReducer = __webpack_require__(183);
+var _IX2RequestReducer = __webpack_require__(182);
 
-var _IX2SessionReducer = __webpack_require__(191);
+var _IX2SessionReducer = __webpack_require__(190);
 
-var _IX2ElementsReducer = __webpack_require__(192);
+var _IX2ElementsReducer = __webpack_require__(191);
 
-var _IX2InstancesReducer = __webpack_require__(193);
+var _IX2InstancesReducer = __webpack_require__(192);
 
-var _IX2ParametersReducer = __webpack_require__(271);
+var _IX2ParametersReducer = __webpack_require__(270);
 
 exports.default = (0, _redux.combineReducers)({
   ixData: _IX2DataReducer.ixData,
@@ -10346,7 +10260,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 182 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10376,7 +10290,7 @@ var ixData = exports.ixData = function () {
 };
 
 /***/ }),
-/* 183 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10428,16 +10342,16 @@ var ixRequest = exports.ixRequest = function () {
 };
 
 /***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(184), __esModule: true };
+
+/***/ }),
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(185), __esModule: true };
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(186);
+__webpack_require__(185);
 var $Object = __webpack_require__(6).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
@@ -10445,7 +10359,7 @@ module.exports = function defineProperty(it, key, desc) {
 
 
 /***/ }),
-/* 186 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(19);
@@ -10454,31 +10368,31 @@ $export($export.S + $export.F * !__webpack_require__(8), 'Object', { definePrope
 
 
 /***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(187), __esModule: true };
+
+/***/ }),
 /* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(188), __esModule: true };
+__webpack_require__(188);
+module.exports = __webpack_require__(6).Object.assign;
+
 
 /***/ }),
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(189);
-module.exports = __webpack_require__(6).Object.assign;
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__(19);
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(189) });
 
 
 /***/ }),
 /* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(19);
-
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(190) });
-
-
-/***/ }),
-/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10519,7 +10433,7 @@ module.exports = !$assign || __webpack_require__(22)(function () {
 
 
 /***/ }),
-/* 191 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10616,7 +10530,7 @@ var ixSession = exports.ixSession = function () {
 };
 
 /***/ }),
-/* 192 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10719,7 +10633,7 @@ function pickUnits(actionItem) {
 }
 
 /***/ }),
-/* 193 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11018,7 +10932,7 @@ var ixInstances = exports.ixInstances = function () {
 };
 
 /***/ }),
-/* 194 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11062,7 +10976,7 @@ exports.swingTo = swingTo;
 exports.bounce = bounce;
 exports.bouncePast = bouncePast;
 
-var _bezierEasing = __webpack_require__(195);
+var _bezierEasing = __webpack_require__(194);
 
 var _bezierEasing2 = _interopRequireDefault(_bezierEasing);
 
@@ -11328,7 +11242,7 @@ function bouncePast(pos) {
 }
 
 /***/ }),
-/* 195 */
+/* 194 */
 /***/ (function(module, exports) {
 
 /**
@@ -11438,7 +11352,7 @@ module.exports = function bezier (mX1, mY1, mX2, mY2) {
 
 
 /***/ }),
-/* 196 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(26);
@@ -11490,7 +11404,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 197 */
+/* 196 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -11518,10 +11432,10 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 198 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoizeCapped = __webpack_require__(199);
+var memoizeCapped = __webpack_require__(198);
 
 /** Used to match property names within property paths. */
 var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
@@ -11551,10 +11465,10 @@ module.exports = stringToPath;
 
 
 /***/ }),
-/* 199 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoize = __webpack_require__(200);
+var memoize = __webpack_require__(199);
 
 /** Used as the maximum memoize cache size. */
 var MAX_MEMOIZE_SIZE = 500;
@@ -11583,7 +11497,7 @@ module.exports = memoizeCapped;
 
 
 /***/ }),
-/* 200 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(61);
@@ -11662,10 +11576,10 @@ module.exports = memoize;
 
 
 /***/ }),
-/* 201 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Hash = __webpack_require__(202),
+var Hash = __webpack_require__(201),
     ListCache = __webpack_require__(40),
     Map = __webpack_require__(63);
 
@@ -11689,14 +11603,14 @@ module.exports = mapCacheClear;
 
 
 /***/ }),
-/* 202 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hashClear = __webpack_require__(203),
-    hashDelete = __webpack_require__(208),
-    hashGet = __webpack_require__(209),
-    hashHas = __webpack_require__(210),
-    hashSet = __webpack_require__(211);
+var hashClear = __webpack_require__(202),
+    hashDelete = __webpack_require__(207),
+    hashGet = __webpack_require__(208),
+    hashHas = __webpack_require__(209),
+    hashSet = __webpack_require__(210);
 
 /**
  * Creates a hash object.
@@ -11727,7 +11641,7 @@ module.exports = Hash;
 
 
 /***/ }),
-/* 203 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(39);
@@ -11748,11 +11662,11 @@ module.exports = hashClear;
 
 
 /***/ }),
-/* 204 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(102),
-    isMasked = __webpack_require__(205),
+    isMasked = __webpack_require__(204),
     isObject = __webpack_require__(4),
     toSource = __webpack_require__(103);
 
@@ -11801,10 +11715,10 @@ module.exports = baseIsNative;
 
 
 /***/ }),
-/* 205 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var coreJsData = __webpack_require__(206);
+var coreJsData = __webpack_require__(205);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -11827,10 +11741,10 @@ module.exports = isMasked;
 
 
 /***/ }),
-/* 206 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(2);
+var root = __webpack_require__(3);
 
 /** Used to detect overreaching core-js shims. */
 var coreJsData = root['__core-js_shared__'];
@@ -11839,7 +11753,7 @@ module.exports = coreJsData;
 
 
 /***/ }),
-/* 207 */
+/* 206 */
 /***/ (function(module, exports) {
 
 /**
@@ -11858,7 +11772,7 @@ module.exports = getValue;
 
 
 /***/ }),
-/* 208 */
+/* 207 */
 /***/ (function(module, exports) {
 
 /**
@@ -11881,7 +11795,7 @@ module.exports = hashDelete;
 
 
 /***/ }),
-/* 209 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(39);
@@ -11917,7 +11831,7 @@ module.exports = hashGet;
 
 
 /***/ }),
-/* 210 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(39);
@@ -11946,7 +11860,7 @@ module.exports = hashHas;
 
 
 /***/ }),
-/* 211 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var nativeCreate = __webpack_require__(39);
@@ -11975,7 +11889,7 @@ module.exports = hashSet;
 
 
 /***/ }),
-/* 212 */
+/* 211 */
 /***/ (function(module, exports) {
 
 /**
@@ -11994,7 +11908,7 @@ module.exports = listCacheClear;
 
 
 /***/ }),
-/* 213 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(41);
@@ -12035,7 +11949,7 @@ module.exports = listCacheDelete;
 
 
 /***/ }),
-/* 214 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(41);
@@ -12060,7 +11974,7 @@ module.exports = listCacheGet;
 
 
 /***/ }),
-/* 215 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(41);
@@ -12082,7 +11996,7 @@ module.exports = listCacheHas;
 
 
 /***/ }),
-/* 216 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assocIndexOf = __webpack_require__(41);
@@ -12114,7 +12028,7 @@ module.exports = listCacheSet;
 
 
 /***/ }),
-/* 217 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(42);
@@ -12138,7 +12052,7 @@ module.exports = mapCacheDelete;
 
 
 /***/ }),
-/* 218 */
+/* 217 */
 /***/ (function(module, exports) {
 
 /**
@@ -12159,7 +12073,7 @@ module.exports = isKeyable;
 
 
 /***/ }),
-/* 219 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(42);
@@ -12181,7 +12095,7 @@ module.exports = mapCacheGet;
 
 
 /***/ }),
-/* 220 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(42);
@@ -12203,7 +12117,7 @@ module.exports = mapCacheHas;
 
 
 /***/ }),
-/* 221 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getMapData = __webpack_require__(42);
@@ -12231,7 +12145,7 @@ module.exports = mapCacheSet;
 
 
 /***/ }),
-/* 222 */
+/* 221 */
 /***/ (function(module, exports) {
 
 /**
@@ -12262,13 +12176,13 @@ module.exports = defaultTo;
 
 
 /***/ }),
-/* 223 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayReduce = __webpack_require__(224),
+var arrayReduce = __webpack_require__(223),
     baseEach = __webpack_require__(107),
     baseIteratee = __webpack_require__(13),
-    baseReduce = __webpack_require__(265),
+    baseReduce = __webpack_require__(264),
     isArray = __webpack_require__(0);
 
 /**
@@ -12319,7 +12233,7 @@ module.exports = reduce;
 
 
 /***/ }),
-/* 224 */
+/* 223 */
 /***/ (function(module, exports) {
 
 /**
@@ -12351,10 +12265,10 @@ module.exports = arrayReduce;
 
 
 /***/ }),
-/* 225 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createBaseFor = __webpack_require__(226);
+var createBaseFor = __webpack_require__(225);
 
 /**
  * The base implementation of `baseForOwn` which iterates over `object`
@@ -12373,7 +12287,7 @@ module.exports = baseFor;
 
 
 /***/ }),
-/* 226 */
+/* 225 */
 /***/ (function(module, exports) {
 
 /**
@@ -12404,7 +12318,7 @@ module.exports = createBaseFor;
 
 
 /***/ }),
-/* 227 */
+/* 226 */
 /***/ (function(module, exports) {
 
 /**
@@ -12430,7 +12344,7 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 228 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(17),
@@ -12454,7 +12368,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 229 */
+/* 228 */
 /***/ (function(module, exports) {
 
 /**
@@ -12478,7 +12392,7 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 230 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(17),
@@ -12544,7 +12458,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 231 */
+/* 230 */
 /***/ (function(module, exports) {
 
 /**
@@ -12564,7 +12478,7 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 232 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(101);
@@ -12601,7 +12515,7 @@ module.exports = nodeUtil;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(110)(module)))
 
 /***/ }),
-/* 233 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var overArg = __webpack_require__(111);
@@ -12613,7 +12527,7 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 234 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArrayLike = __webpack_require__(18);
@@ -12651,11 +12565,11 @@ module.exports = createBaseEach;
 
 
 /***/ }),
-/* 235 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsMatch = __webpack_require__(236),
-    getMatchData = __webpack_require__(258),
+var baseIsMatch = __webpack_require__(235),
+    getMatchData = __webpack_require__(257),
     matchesStrictComparable = __webpack_require__(120);
 
 /**
@@ -12679,7 +12593,7 @@ module.exports = baseMatches;
 
 
 /***/ }),
-/* 236 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(112),
@@ -12747,7 +12661,7 @@ module.exports = baseIsMatch;
 
 
 /***/ }),
-/* 237 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(40);
@@ -12768,7 +12682,7 @@ module.exports = stackClear;
 
 
 /***/ }),
-/* 238 */
+/* 237 */
 /***/ (function(module, exports) {
 
 /**
@@ -12792,7 +12706,7 @@ module.exports = stackDelete;
 
 
 /***/ }),
-/* 239 */
+/* 238 */
 /***/ (function(module, exports) {
 
 /**
@@ -12812,7 +12726,7 @@ module.exports = stackGet;
 
 
 /***/ }),
-/* 240 */
+/* 239 */
 /***/ (function(module, exports) {
 
 /**
@@ -12832,7 +12746,7 @@ module.exports = stackHas;
 
 
 /***/ }),
-/* 241 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(40),
@@ -12872,13 +12786,13 @@ module.exports = stackSet;
 
 
 /***/ }),
-/* 242 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Stack = __webpack_require__(112),
     equalArrays = __webpack_require__(114),
-    equalByTag = __webpack_require__(248),
-    equalObjects = __webpack_require__(252),
+    equalByTag = __webpack_require__(247),
+    equalObjects = __webpack_require__(251),
     getTag = __webpack_require__(71),
     isArray = __webpack_require__(0),
     isBuffer = __webpack_require__(64),
@@ -12961,12 +12875,12 @@ module.exports = baseIsEqualDeep;
 
 
 /***/ }),
-/* 243 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MapCache = __webpack_require__(61),
-    setCacheAdd = __webpack_require__(244),
-    setCacheHas = __webpack_require__(245);
+    setCacheAdd = __webpack_require__(243),
+    setCacheHas = __webpack_require__(244);
 
 /**
  *
@@ -12994,7 +12908,7 @@ module.exports = SetCache;
 
 
 /***/ }),
-/* 244 */
+/* 243 */
 /***/ (function(module, exports) {
 
 /** Used to stand-in for `undefined` hash values. */
@@ -13019,7 +12933,7 @@ module.exports = setCacheAdd;
 
 
 /***/ }),
-/* 245 */
+/* 244 */
 /***/ (function(module, exports) {
 
 /**
@@ -13039,7 +12953,7 @@ module.exports = setCacheHas;
 
 
 /***/ }),
-/* 246 */
+/* 245 */
 /***/ (function(module, exports) {
 
 /**
@@ -13068,7 +12982,7 @@ module.exports = arraySome;
 
 
 /***/ }),
-/* 247 */
+/* 246 */
 /***/ (function(module, exports) {
 
 /**
@@ -13087,15 +13001,15 @@ module.exports = cacheHas;
 
 
 /***/ }),
-/* 248 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(26),
-    Uint8Array = __webpack_require__(249),
+    Uint8Array = __webpack_require__(248),
     eq = __webpack_require__(62),
     equalArrays = __webpack_require__(114),
-    mapToArray = __webpack_require__(250),
-    setToArray = __webpack_require__(251);
+    mapToArray = __webpack_require__(249),
+    setToArray = __webpack_require__(250);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1,
@@ -13205,10 +13119,10 @@ module.exports = equalByTag;
 
 
 /***/ }),
-/* 249 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(2);
+var root = __webpack_require__(3);
 
 /** Built-in value references. */
 var Uint8Array = root.Uint8Array;
@@ -13217,7 +13131,7 @@ module.exports = Uint8Array;
 
 
 /***/ }),
-/* 250 */
+/* 249 */
 /***/ (function(module, exports) {
 
 /**
@@ -13241,7 +13155,7 @@ module.exports = mapToArray;
 
 
 /***/ }),
-/* 251 */
+/* 250 */
 /***/ (function(module, exports) {
 
 /**
@@ -13265,10 +13179,10 @@ module.exports = setToArray;
 
 
 /***/ }),
-/* 252 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getAllKeys = __webpack_require__(253);
+var getAllKeys = __webpack_require__(252);
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
@@ -13360,7 +13274,7 @@ module.exports = equalObjects;
 
 
 /***/ }),
-/* 253 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetAllKeys = __webpack_require__(115),
@@ -13382,7 +13296,7 @@ module.exports = getAllKeys;
 
 
 /***/ }),
-/* 254 */
+/* 253 */
 /***/ (function(module, exports) {
 
 /**
@@ -13413,11 +13327,11 @@ module.exports = arrayFilter;
 
 
 /***/ }),
-/* 255 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(12),
-    root = __webpack_require__(2);
+    root = __webpack_require__(3);
 
 /* Built-in method references that are verified to be native. */
 var DataView = getNative(root, 'DataView');
@@ -13426,11 +13340,11 @@ module.exports = DataView;
 
 
 /***/ }),
-/* 256 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(12),
-    root = __webpack_require__(2);
+    root = __webpack_require__(3);
 
 /* Built-in method references that are verified to be native. */
 var Promise = getNative(root, 'Promise');
@@ -13439,11 +13353,11 @@ module.exports = Promise;
 
 
 /***/ }),
-/* 257 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(12),
-    root = __webpack_require__(2);
+    root = __webpack_require__(3);
 
 /* Built-in method references that are verified to be native. */
 var Set = getNative(root, 'Set');
@@ -13452,7 +13366,7 @@ module.exports = Set;
 
 
 /***/ }),
-/* 258 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isStrictComparable = __webpack_require__(119),
@@ -13482,12 +13396,12 @@ module.exports = getMatchData;
 
 
 /***/ }),
-/* 259 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsEqual = __webpack_require__(113),
     get = __webpack_require__(36),
-    hasIn = __webpack_require__(260),
+    hasIn = __webpack_require__(259),
     isKey = __webpack_require__(60),
     isStrictComparable = __webpack_require__(119),
     matchesStrictComparable = __webpack_require__(120),
@@ -13521,11 +13435,11 @@ module.exports = baseMatchesProperty;
 
 
 /***/ }),
-/* 260 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseHasIn = __webpack_require__(261),
-    hasPath = __webpack_require__(262);
+var baseHasIn = __webpack_require__(260),
+    hasPath = __webpack_require__(261);
 
 /**
  * Checks if `path` is a direct or inherited property of `object`.
@@ -13561,7 +13475,7 @@ module.exports = hasIn;
 
 
 /***/ }),
-/* 261 */
+/* 260 */
 /***/ (function(module, exports) {
 
 /**
@@ -13580,7 +13494,7 @@ module.exports = baseHasIn;
 
 
 /***/ }),
-/* 262 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var castPath = __webpack_require__(37),
@@ -13625,11 +13539,11 @@ module.exports = hasPath;
 
 
 /***/ }),
-/* 263 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseProperty = __webpack_require__(121),
-    basePropertyDeep = __webpack_require__(264),
+    basePropertyDeep = __webpack_require__(263),
     isKey = __webpack_require__(60),
     toKey = __webpack_require__(27);
 
@@ -13663,7 +13577,7 @@ module.exports = property;
 
 
 /***/ }),
-/* 264 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(59);
@@ -13685,7 +13599,7 @@ module.exports = basePropertyDeep;
 
 
 /***/ }),
-/* 265 */
+/* 264 */
 /***/ (function(module, exports) {
 
 /**
@@ -13714,11 +13628,11 @@ module.exports = baseReduce;
 
 
 /***/ }),
-/* 266 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var createFind = __webpack_require__(122),
-    findLastIndex = __webpack_require__(267);
+    findLastIndex = __webpack_require__(266);
 
 /**
  * This method is like `_.find` except that it iterates over elements of
@@ -13745,7 +13659,7 @@ module.exports = findLast;
 
 
 /***/ }),
-/* 267 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseFindIndex = __webpack_require__(123),
@@ -13810,7 +13724,7 @@ module.exports = findLastIndex;
 
 
 /***/ }),
-/* 268 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toNumber = __webpack_require__(74);
@@ -13858,7 +13772,7 @@ module.exports = toFinite;
 
 
 /***/ }),
-/* 269 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13942,7 +13856,7 @@ var getBodymovinSpeed = function getBodymovinSpeed(actionItemDuration, pluginIns
 };
 
 /***/ }),
-/* 270 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseFindIndex = __webpack_require__(123),
@@ -14003,7 +13917,7 @@ module.exports = findIndex;
 
 
 /***/ }),
-/* 271 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14047,7 +13961,7 @@ var ixParameters = exports.ixParameters = function () {
 };
 
 /***/ }),
-/* 272 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14055,7 +13969,7 @@ var ixParameters = exports.ixParameters = function () {
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(273);
+var _from = __webpack_require__(272);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -14074,22 +13988,22 @@ exports.default = function (arr) {
 };
 
 /***/ }),
+/* 272 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(273), __esModule: true };
+
+/***/ }),
 /* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(274), __esModule: true };
-
-/***/ }),
-/* 274 */
-/***/ (function(module, exports, __webpack_require__) {
-
 __webpack_require__(82);
-__webpack_require__(275);
+__webpack_require__(274);
 module.exports = __webpack_require__(6).Array.from;
 
 
 /***/ }),
-/* 275 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14097,13 +14011,13 @@ module.exports = __webpack_require__(6).Array.from;
 var ctx = __webpack_require__(84);
 var $export = __webpack_require__(19);
 var toObject = __webpack_require__(54);
-var call = __webpack_require__(276);
-var isArrayIter = __webpack_require__(277);
+var call = __webpack_require__(275);
+var isArrayIter = __webpack_require__(276);
 var toLength = __webpack_require__(91);
-var createProperty = __webpack_require__(278);
-var getIterFn = __webpack_require__(279);
+var createProperty = __webpack_require__(277);
+var getIterFn = __webpack_require__(278);
 
-$export($export.S + $export.F * !__webpack_require__(281)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(280)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -14133,7 +14047,7 @@ $export($export.S + $export.F * !__webpack_require__(281)(function (iter) { Arra
 
 
 /***/ }),
-/* 276 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -14151,12 +14065,12 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 277 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
 var Iterators = __webpack_require__(24);
-var ITERATOR = __webpack_require__(1)('iterator');
+var ITERATOR = __webpack_require__(2)('iterator');
 var ArrayProto = Array.prototype;
 
 module.exports = function (it) {
@@ -14165,7 +14079,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 278 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14180,11 +14094,11 @@ module.exports = function (object, index, value) {
 
 
 /***/ }),
-/* 279 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(280);
-var ITERATOR = __webpack_require__(1)('iterator');
+var classof = __webpack_require__(279);
+var ITERATOR = __webpack_require__(2)('iterator');
 var Iterators = __webpack_require__(24);
 module.exports = __webpack_require__(6).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
@@ -14194,12 +14108,12 @@ module.exports = __webpack_require__(6).getIteratorMethod = function (it) {
 
 
 /***/ }),
-/* 280 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = __webpack_require__(49);
-var TAG = __webpack_require__(1)('toStringTag');
+var TAG = __webpack_require__(2)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
 
@@ -14223,10 +14137,10 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 281 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ITERATOR = __webpack_require__(1)('iterator');
+var ITERATOR = __webpack_require__(2)('iterator');
 var SAFE_CLOSING = false;
 
 try {
@@ -14251,7 +14165,7 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 282 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14272,14 +14186,14 @@ exports.default = function (obj, keys) {
 };
 
 /***/ }),
-/* 283 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseKeys = __webpack_require__(68),
     getTag = __webpack_require__(71),
     isArrayLike = __webpack_require__(18),
-    isString = __webpack_require__(284),
-    stringSize = __webpack_require__(285);
+    isString = __webpack_require__(283),
+    stringSize = __webpack_require__(284);
 
 /** `Object#toString` result references. */
 var mapTag = '[object Map]',
@@ -14324,7 +14238,7 @@ module.exports = size;
 
 
 /***/ }),
-/* 284 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(17),
@@ -14360,12 +14274,12 @@ module.exports = isString;
 
 
 /***/ }),
-/* 285 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var asciiSize = __webpack_require__(286),
-    hasUnicode = __webpack_require__(287),
-    unicodeSize = __webpack_require__(288);
+var asciiSize = __webpack_require__(285),
+    hasUnicode = __webpack_require__(286),
+    unicodeSize = __webpack_require__(287);
 
 /**
  * Gets the number of symbols in `string`.
@@ -14384,7 +14298,7 @@ module.exports = stringSize;
 
 
 /***/ }),
-/* 286 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseProperty = __webpack_require__(121);
@@ -14402,7 +14316,7 @@ module.exports = asciiSize;
 
 
 /***/ }),
-/* 287 */
+/* 286 */
 /***/ (function(module, exports) {
 
 /** Used to compose unicode character classes. */
@@ -14434,7 +14348,7 @@ module.exports = hasUnicode;
 
 
 /***/ }),
-/* 288 */
+/* 287 */
 /***/ (function(module, exports) {
 
 /** Used to compose unicode character classes. */
@@ -14484,12 +14398,12 @@ module.exports = unicodeSize;
 
 
 /***/ }),
-/* 289 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIteratee = __webpack_require__(13),
-    negate = __webpack_require__(290),
-    pickBy = __webpack_require__(291);
+    negate = __webpack_require__(289),
+    pickBy = __webpack_require__(290);
 
 /**
  * The opposite of `_.pickBy`; this method creates an object composed of
@@ -14519,7 +14433,7 @@ module.exports = omitBy;
 
 
 /***/ }),
-/* 290 */
+/* 289 */
 /***/ (function(module, exports) {
 
 /** Error message constants. */
@@ -14565,13 +14479,13 @@ module.exports = negate;
 
 
 /***/ }),
-/* 291 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayMap = __webpack_require__(106),
     baseIteratee = __webpack_require__(13),
-    basePickBy = __webpack_require__(292),
-    getAllKeysIn = __webpack_require__(295);
+    basePickBy = __webpack_require__(291),
+    getAllKeysIn = __webpack_require__(294);
 
 /**
  * Creates an object composed of the `object` properties `predicate` returns
@@ -14608,11 +14522,11 @@ module.exports = pickBy;
 
 
 /***/ }),
-/* 292 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGet = __webpack_require__(59),
-    baseSet = __webpack_require__(293),
+    baseSet = __webpack_require__(292),
     castPath = __webpack_require__(37);
 
 /**
@@ -14644,10 +14558,10 @@ module.exports = basePickBy;
 
 
 /***/ }),
-/* 293 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assignValue = __webpack_require__(294),
+var assignValue = __webpack_require__(293),
     castPath = __webpack_require__(37),
     isIndex = __webpack_require__(65),
     isObject = __webpack_require__(4),
@@ -14697,7 +14611,7 @@ module.exports = baseSet;
 
 
 /***/ }),
-/* 294 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseAssignValue = __webpack_require__(127),
@@ -14731,12 +14645,12 @@ module.exports = assignValue;
 
 
 /***/ }),
-/* 295 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetAllKeys = __webpack_require__(115),
-    getSymbolsIn = __webpack_require__(296),
-    keysIn = __webpack_require__(298);
+    getSymbolsIn = __webpack_require__(295),
+    keysIn = __webpack_require__(297);
 
 /**
  * Creates an array of own and inherited enumerable property names and
@@ -14754,11 +14668,11 @@ module.exports = getAllKeysIn;
 
 
 /***/ }),
-/* 296 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayPush = __webpack_require__(70),
-    getPrototype = __webpack_require__(297),
+    getPrototype = __webpack_require__(296),
     getSymbols = __webpack_require__(116),
     stubArray = __webpack_require__(117);
 
@@ -14785,7 +14699,7 @@ module.exports = getSymbolsIn;
 
 
 /***/ }),
-/* 297 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var overArg = __webpack_require__(111);
@@ -14797,11 +14711,11 @@ module.exports = getPrototype;
 
 
 /***/ }),
-/* 298 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayLikeKeys = __webpack_require__(109),
-    baseKeysIn = __webpack_require__(299),
+    baseKeysIn = __webpack_require__(298),
     isArrayLike = __webpack_require__(18);
 
 /**
@@ -14835,12 +14749,12 @@ module.exports = keysIn;
 
 
 /***/ }),
-/* 299 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4),
     isPrototype = __webpack_require__(69),
-    nativeKeysIn = __webpack_require__(300);
+    nativeKeysIn = __webpack_require__(299);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -14874,7 +14788,7 @@ module.exports = baseKeysIn;
 
 
 /***/ }),
-/* 300 */
+/* 299 */
 /***/ (function(module, exports) {
 
 /**
@@ -14900,7 +14814,7 @@ module.exports = nativeKeysIn;
 
 
 /***/ }),
-/* 301 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseKeys = __webpack_require__(68),
@@ -14983,7 +14897,7 @@ module.exports = isEmpty;
 
 
 /***/ }),
-/* 302 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseAssignValue = __webpack_require__(127),
@@ -15032,12 +14946,12 @@ module.exports = mapValues;
 
 
 /***/ }),
-/* 303 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayEach = __webpack_require__(304),
+var arrayEach = __webpack_require__(303),
     baseEach = __webpack_require__(107),
-    castFunction = __webpack_require__(305),
+    castFunction = __webpack_require__(304),
     isArray = __webpack_require__(0);
 
 /**
@@ -15079,7 +14993,7 @@ module.exports = forEach;
 
 
 /***/ }),
-/* 304 */
+/* 303 */
 /***/ (function(module, exports) {
 
 /**
@@ -15107,7 +15021,7 @@ module.exports = arrayEach;
 
 
 /***/ }),
-/* 305 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var identity = __webpack_require__(72);
@@ -15127,7 +15041,7 @@ module.exports = castFunction;
 
 
 /***/ }),
-/* 306 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseClamp = __webpack_require__(129),
@@ -15176,10 +15090,10 @@ module.exports = endsWith;
 
 
 /***/ }),
-/* 307 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var debounce = __webpack_require__(308),
+var debounce = __webpack_require__(307),
     isObject = __webpack_require__(4);
 
 /** Error message constants. */
@@ -15251,11 +15165,11 @@ module.exports = throttle;
 
 
 /***/ }),
-/* 308 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4),
-    now = __webpack_require__(309),
+    now = __webpack_require__(308),
     toNumber = __webpack_require__(74);
 
 /** Error message constants. */
@@ -15447,10 +15361,10 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 309 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(2);
+var root = __webpack_require__(3);
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -15476,7 +15390,7 @@ module.exports = now;
 
 
 /***/ }),
-/* 310 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15484,7 +15398,7 @@ module.exports = now;
 
 exports.__esModule = true;
 
-var _shallowEqual = __webpack_require__(311);
+var _shallowEqual = __webpack_require__(310);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
@@ -15493,7 +15407,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _shallowEqual2.default;
 
 /***/ }),
-/* 311 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15564,7 +15478,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 312 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15729,7 +15643,7 @@ function getRefType(ref) {
 }
 
 /***/ }),
-/* 313 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15755,7 +15669,7 @@ var _extends2 = __webpack_require__(34);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _flow = __webpack_require__(314);
+var _flow = __webpack_require__(313);
 
 var _flow2 = _interopRequireDefault(_flow);
 
@@ -15763,7 +15677,7 @@ var _get = __webpack_require__(36);
 
 var _get2 = _interopRequireDefault(_get);
 
-var _clamp = __webpack_require__(333);
+var _clamp = __webpack_require__(332);
 
 var _clamp2 = _interopRequireDefault(_clamp);
 
@@ -16403,10 +16317,10 @@ exports.default = (_exports$default = {}, (0, _defineProperty3.default)(_exports
 }), _exports$default);
 
 /***/ }),
-/* 314 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var createFlow = __webpack_require__(315);
+var createFlow = __webpack_require__(314);
 
 /**
  * Creates a function that returns the result of invoking the given functions
@@ -16436,15 +16350,15 @@ module.exports = flow;
 
 
 /***/ }),
-/* 315 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var LodashWrapper = __webpack_require__(78),
-    flatRest = __webpack_require__(316),
+    flatRest = __webpack_require__(315),
     getData = __webpack_require__(131),
     getFuncName = __webpack_require__(132),
     isArray = __webpack_require__(0),
-    isLaziable = __webpack_require__(329);
+    isLaziable = __webpack_require__(328);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -16520,12 +16434,12 @@ module.exports = createFlow;
 
 
 /***/ }),
-/* 316 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var flatten = __webpack_require__(317),
-    overRest = __webpack_require__(320),
-    setToString = __webpack_require__(322);
+var flatten = __webpack_require__(316),
+    overRest = __webpack_require__(319),
+    setToString = __webpack_require__(321);
 
 /**
  * A specialized version of `baseRest` which flattens the rest array.
@@ -16542,10 +16456,10 @@ module.exports = flatRest;
 
 
 /***/ }),
-/* 317 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFlatten = __webpack_require__(318);
+var baseFlatten = __webpack_require__(317);
 
 /**
  * Flattens `array` a single level deep.
@@ -16570,11 +16484,11 @@ module.exports = flatten;
 
 
 /***/ }),
-/* 318 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayPush = __webpack_require__(70),
-    isFlattenable = __webpack_require__(319);
+    isFlattenable = __webpack_require__(318);
 
 /**
  * The base implementation of `_.flatten` with support for restricting flattening.
@@ -16614,7 +16528,7 @@ module.exports = baseFlatten;
 
 
 /***/ }),
-/* 319 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(26),
@@ -16640,10 +16554,10 @@ module.exports = isFlattenable;
 
 
 /***/ }),
-/* 320 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = __webpack_require__(321);
+var apply = __webpack_require__(320);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -16682,7 +16596,7 @@ module.exports = overRest;
 
 
 /***/ }),
-/* 321 */
+/* 320 */
 /***/ (function(module, exports) {
 
 /**
@@ -16709,11 +16623,11 @@ module.exports = apply;
 
 
 /***/ }),
-/* 322 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseSetToString = __webpack_require__(323),
-    shortOut = __webpack_require__(325);
+var baseSetToString = __webpack_require__(322),
+    shortOut = __webpack_require__(324);
 
 /**
  * Sets the `toString` method of `func` to return `string`.
@@ -16729,10 +16643,10 @@ module.exports = setToString;
 
 
 /***/ }),
-/* 323 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constant = __webpack_require__(324),
+var constant = __webpack_require__(323),
     defineProperty = __webpack_require__(128),
     identity = __webpack_require__(72);
 
@@ -16757,7 +16671,7 @@ module.exports = baseSetToString;
 
 
 /***/ }),
-/* 324 */
+/* 323 */
 /***/ (function(module, exports) {
 
 /**
@@ -16789,7 +16703,7 @@ module.exports = constant;
 
 
 /***/ }),
-/* 325 */
+/* 324 */
 /***/ (function(module, exports) {
 
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -16832,7 +16746,7 @@ module.exports = shortOut;
 
 
 /***/ }),
-/* 326 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var WeakMap = __webpack_require__(118);
@@ -16844,7 +16758,7 @@ module.exports = metaMap;
 
 
 /***/ }),
-/* 327 */
+/* 326 */
 /***/ (function(module, exports) {
 
 /**
@@ -16867,7 +16781,7 @@ module.exports = noop;
 
 
 /***/ }),
-/* 328 */
+/* 327 */
 /***/ (function(module, exports) {
 
 /** Used to lookup unminified function names. */
@@ -16877,13 +16791,13 @@ module.exports = realNames;
 
 
 /***/ }),
-/* 329 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var LazyWrapper = __webpack_require__(80),
     getData = __webpack_require__(131),
     getFuncName = __webpack_require__(132),
-    lodash = __webpack_require__(330);
+    lodash = __webpack_require__(329);
 
 /**
  * Checks if `func` has a lazy counterpart.
@@ -16911,7 +16825,7 @@ module.exports = isLaziable;
 
 
 /***/ }),
-/* 330 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var LazyWrapper = __webpack_require__(80),
@@ -16919,7 +16833,7 @@ var LazyWrapper = __webpack_require__(80),
     baseLodash = __webpack_require__(79),
     isArray = __webpack_require__(0),
     isObjectLike = __webpack_require__(11),
-    wrapperClone = __webpack_require__(331);
+    wrapperClone = __webpack_require__(330);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -17064,12 +16978,12 @@ module.exports = lodash;
 
 
 /***/ }),
-/* 331 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var LazyWrapper = __webpack_require__(80),
     LodashWrapper = __webpack_require__(78),
-    copyArray = __webpack_require__(332);
+    copyArray = __webpack_require__(331);
 
 /**
  * Creates a clone of `wrapper`.
@@ -17093,7 +17007,7 @@ module.exports = wrapperClone;
 
 
 /***/ }),
-/* 332 */
+/* 331 */
 /***/ (function(module, exports) {
 
 /**
@@ -17119,7 +17033,7 @@ module.exports = copyArray;
 
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseClamp = __webpack_require__(129),
@@ -17164,31 +17078,487 @@ module.exports = clamp;
 
 
 /***/ }),
-/* 334 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+/*eslint no-shadow: 0*/
+
 /**
- * Webflow: Auto-select links to current page or section
+ * Webflow: Lightbox component
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
 
-Webflow.define('links', module.exports = function ($, _) {
+function createLightbox(window, document, $, container) {
+  var tram = $.tram;
+  var isArray = Array.isArray;
+  var namespace = 'w-lightbox';
+  var prefix = namespace + '-';
+  var prefixRegex = /(^|\s+)/g;
+
+  // Array of objects describing items to be displayed.
+  var items = [];
+
+  // Index of the currently displayed item.
+  var currentIndex;
+
+  // Object holding references to jQuery wrapped nodes.
+  var $refs;
+
+  // Instance of Spinner
+  var spinner;
+
+  function lightbox(thing, index) {
+    items = isArray(thing) ? thing : [thing];
+
+    if (!$refs) {
+      lightbox.build();
+    }
+
+    if (items.length > 1) {
+      $refs.items = $refs.empty;
+
+      items.forEach(function (item) {
+        var $thumbnail = dom('thumbnail');
+        var $item = dom('item').append($thumbnail);
+
+        $refs.items = $refs.items.add($item);
+
+        loadImage(item.thumbnailUrl || item.url, function ($image) {
+          if ($image.prop('width') > $image.prop('height')) {
+            addClass($image, 'wide');
+          } else {
+            addClass($image, 'tall');
+          }
+          $thumbnail.append(addClass($image, 'thumbnail-image'));
+        });
+      });
+
+      $refs.strip.empty().append($refs.items);
+      addClass($refs.content, 'group');
+    }
+
+    tram(
+    // Focus the lightbox to receive keyboard events.
+    removeClass($refs.lightbox, 'hide').trigger('focus')).add('opacity .3s').start({ opacity: 1 });
+
+    // Prevent document from scrolling while lightbox is active.
+    addClass($refs.html, 'noscroll');
+
+    return lightbox.show(index || 0);
+  }
+
+  /**
+   * Creates the DOM structure required by the lightbox.
+   */
+  lightbox.build = function () {
+    // In case `build` is called more than once.
+    lightbox.destroy();
+
+    $refs = {
+      html: $(document.documentElement),
+      // Empty jQuery object can be used to build new ones using `.add`.
+      empty: $()
+    };
+
+    $refs.arrowLeft = dom('control left inactive');
+    $refs.arrowRight = dom('control right inactive');
+    $refs.close = dom('control close');
+
+    $refs.spinner = dom('spinner');
+    $refs.strip = dom('strip');
+
+    spinner = new Spinner($refs.spinner, prefixed('hide'));
+
+    $refs.content = dom('content').append($refs.spinner, $refs.arrowLeft, $refs.arrowRight, $refs.close);
+
+    $refs.container = dom('container').append($refs.content, $refs.strip);
+
+    $refs.lightbox = dom('backdrop hide').append($refs.container);
+
+    // We are delegating events for performance reasons and also
+    // to not have to reattach handlers when images change.
+    $refs.strip.on('tap', selector('item'), itemTapHandler);
+    $refs.content.on('swipe', swipeHandler).on('tap', selector('left'), handlerPrev).on('tap', selector('right'), handlerNext).on('tap', selector('close'), handlerHide).on('tap', selector('image, caption'), handlerNext);
+    $refs.container.on('tap', selector('view'), handlerHide)
+    // Prevent images from being dragged around.
+    .on('dragstart', selector('img'), preventDefault);
+    $refs.lightbox.on('keydown', keyHandler)
+    // IE loses focus to inner nodes without letting us know.
+    .on('focusin', focusThis);
+
+    // The `tabindex` attribute is needed to enable non-input elements
+    // to receive keyboard events.
+    $(container).append($refs.lightbox.prop('tabIndex', 0));
+
+    return lightbox;
+  };
+
+  /**
+   * Dispose of DOM nodes created by the lightbox.
+   */
+  lightbox.destroy = function () {
+    if (!$refs) {
+      return;
+    }
+
+    // Event handlers are also removed.
+    removeClass($refs.html, 'noscroll');
+    $refs.lightbox.remove();
+    $refs = undefined;
+  };
+
+  /**
+   * Show a specific item.
+   */
+  lightbox.show = function (index) {
+    // Bail if we are already showing this item.
+    if (index === currentIndex) {
+      return;
+    }
+
+    var item = items[index];
+    if (!item) {
+      return lightbox.hide();
+    }
+
+    var previousIndex = currentIndex;
+    currentIndex = index;
+    spinner.show();
+
+    // For videos, load an empty SVG with the video dimensions to preserve
+    // the video’s aspect ratio while being responsive.
+    var url = item.html && svgDataUri(item.width, item.height) || item.url;
+    loadImage(url, function ($image) {
+      // Make sure this is the last item requested to be shown since
+      // images can finish loading in a different order than they were
+      // requested in.
+      if (index !== currentIndex) {
+        return;
+      }
+
+      var $figure = dom('figure', 'figure').append(addClass($image, 'image'));
+      var $frame = dom('frame').append($figure);
+      var $newView = dom('view').append($frame);
+      var $html;
+      var isIframe;
+
+      if (item.html) {
+        $html = $(item.html);
+        isIframe = $html.is('iframe');
+
+        if (isIframe) {
+          $html.on('load', transitionToNewView);
+        }
+
+        $figure.append(addClass($html, 'embed'));
+      }
+
+      if (item.caption) {
+        $figure.append(dom('caption', 'figcaption').text(item.caption));
+      }
+
+      $refs.spinner.before($newView);
+
+      if (!isIframe) {
+        transitionToNewView();
+      }
+
+      function transitionToNewView() {
+        spinner.hide();
+
+        if (index !== currentIndex) {
+          $newView.remove();
+          return;
+        }
+
+        toggleClass($refs.arrowLeft, 'inactive', index <= 0);
+        toggleClass($refs.arrowRight, 'inactive', index >= items.length - 1);
+
+        if ($refs.view) {
+          tram($refs.view).add('opacity .3s').start({ opacity: 0 }).then(remover($refs.view));
+
+          tram($newView).add('opacity .3s').add('transform .3s').set({ x: index > previousIndex ? '80px' : '-80px' }).start({ opacity: 1, x: 0 });
+        } else {
+          $newView.css('opacity', 1);
+        }
+
+        $refs.view = $newView;
+
+        if ($refs.items) {
+          removeClass($refs.items, 'active');
+          // Mark proper thumbnail as active
+          var $activeThumb = $refs.items.eq(index);
+          addClass($activeThumb, 'active');
+          // Scroll into view
+          maybeScroll($activeThumb);
+        }
+      }
+    });
+
+    return lightbox;
+  };
+
+  /**
+   * Hides the lightbox.
+   */
+  lightbox.hide = function () {
+    tram($refs.lightbox).add('opacity .3s').start({ opacity: 0 }).then(hideLightbox);
+
+    return lightbox;
+  };
+
+  lightbox.prev = function () {
+    if (currentIndex > 0) {
+      lightbox.show(currentIndex - 1);
+    }
+  };
+
+  lightbox.next = function () {
+    if (currentIndex < items.length - 1) {
+      lightbox.show(currentIndex + 1);
+    }
+  };
+
+  function createHandler(action) {
+    return function (event) {
+      // We only care about events triggered directly on the bound selectors.
+      if (this !== event.target) {
+        return;
+      }
+
+      event.stopPropagation();
+      event.preventDefault();
+
+      action();
+    };
+  }
+
+  var handlerPrev = createHandler(lightbox.prev);
+  var handlerNext = createHandler(lightbox.next);
+  var handlerHide = createHandler(lightbox.hide);
+
+  var itemTapHandler = function itemTapHandler(event) {
+    var index = $(this).index();
+
+    event.preventDefault();
+    lightbox.show(index);
+  };
+
+  var swipeHandler = function swipeHandler(event, data) {
+    // Prevent scrolling.
+    event.preventDefault();
+
+    if (data.direction === 'left') {
+      lightbox.next();
+    } else if (data.direction === 'right') {
+      lightbox.prev();
+    }
+  };
+
+  var focusThis = function focusThis() {
+    this.focus();
+  };
+
+  function preventDefault(event) {
+    event.preventDefault();
+  }
+
+  function keyHandler(event) {
+    var keyCode = event.keyCode;
+
+    // [esc]
+    if (keyCode === 27) {
+      lightbox.hide();
+
+      // [◀]
+    } else if (keyCode === 37) {
+      lightbox.prev();
+
+      // [▶]
+    } else if (keyCode === 39) {
+      lightbox.next();
+    }
+  }
+
+  function hideLightbox() {
+    // If the lightbox hasn't been destroyed already
+    if ($refs) {
+      // Reset strip scroll, otherwise next lightbox opens scrolled to last position
+      $refs.strip.scrollLeft(0).empty();
+      removeClass($refs.html, 'noscroll');
+      addClass($refs.lightbox, 'hide');
+      $refs.view && $refs.view.remove();
+
+      // Reset some stuff
+      removeClass($refs.content, 'group');
+      addClass($refs.arrowLeft, 'inactive');
+      addClass($refs.arrowRight, 'inactive');
+
+      currentIndex = $refs.view = undefined;
+    }
+  }
+
+  function loadImage(url, callback) {
+    var $image = dom('img', 'img');
+
+    $image.one('load', function () {
+      callback($image);
+    });
+
+    // Start loading image.
+    $image.attr('src', url);
+
+    return $image;
+  }
+
+  function remover($element) {
+    return function () {
+      $element.remove();
+    };
+  }
+
+  function maybeScroll($item) {
+    var itemLeft = $item.position().left;
+    var stripScrollLeft = $refs.strip.scrollLeft();
+    var stripWidth = $refs.strip.width();
+    if (itemLeft < stripScrollLeft || itemLeft > stripWidth + stripScrollLeft) {
+      tram($refs.strip).add('scroll-left 500ms').start({ 'scroll-left': itemLeft });
+    }
+  }
+
+  /**
+   * Spinner
+   */
+  function Spinner($spinner, className, delay) {
+    this.$element = $spinner;
+    this.className = className;
+    this.delay = delay || 200;
+    this.hide();
+  }
+
+  Spinner.prototype.show = function () {
+    var spinner = this;
+
+    // Bail if we are already showing the spinner.
+    if (spinner.timeoutId) {
+      return;
+    }
+
+    spinner.timeoutId = setTimeout(function () {
+      spinner.$element.removeClass(spinner.className);
+      delete spinner.timeoutId;
+    }, spinner.delay);
+  };
+
+  Spinner.prototype.hide = function () {
+    var spinner = this;
+    if (spinner.timeoutId) {
+      clearTimeout(spinner.timeoutId);
+      delete spinner.timeoutId;
+      return;
+    }
+
+    spinner.$element.addClass(spinner.className);
+  };
+
+  function prefixed(string, isSelector) {
+    return string.replace(prefixRegex, (isSelector ? ' .' : ' ') + prefix);
+  }
+
+  function selector(string) {
+    return prefixed(string, true);
+  }
+
+  /**
+   * jQuery.addClass with auto-prefixing
+   * @param  {jQuery} Element to add class to
+   * @param  {string} Class name that will be prefixed and added to element
+   * @return {jQuery}
+   */
+  function addClass($element, className) {
+    return $element.addClass(prefixed(className));
+  }
+
+  /**
+   * jQuery.removeClass with auto-prefixing
+   * @param  {jQuery} Element to remove class from
+   * @param  {string} Class name that will be prefixed and removed from element
+   * @return {jQuery}
+   */
+  function removeClass($element, className) {
+    return $element.removeClass(prefixed(className));
+  }
+
+  /**
+   * jQuery.toggleClass with auto-prefixing
+   * @param  {jQuery}  Element where class will be toggled
+   * @param  {string}  Class name that will be prefixed and toggled
+   * @param  {boolean} Optional boolean that determines if class will be added or removed
+   * @return {jQuery}
+   */
+  function toggleClass($element, className, shouldAdd) {
+    return $element.toggleClass(prefixed(className), shouldAdd);
+  }
+
+  /**
+   * Create a new DOM element wrapped in a jQuery object,
+   * decorated with our custom methods.
+   * @param  {string} className
+   * @param  {string} [tag]
+   * @return {jQuery}
+   */
+  function dom(className, tag) {
+    return addClass($(document.createElement(tag || 'div')), className);
+  }
+
+  function svgDataUri(width, height) {
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '"/>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURI(svg);
+  }
+
+  // Compute some dimensions manually for iOS < 8, because of buggy support for VH.
+  // Also, Android built-in browser does not support viewport units.
+  (function () {
+    var ua = window.navigator.userAgent;
+    var iOSRegex = /(iPhone|iPad|iPod);[^OS]*OS (\d)/;
+    var iOSMatches = ua.match(iOSRegex);
+    var android = ua.indexOf('Android ') > -1 && ua.indexOf('Chrome') === -1;
+
+    if (!android && (!iOSMatches || iOSMatches[2] > 7)) {
+      return;
+    }
+
+    var styleNode = document.createElement('style');
+    document.head.appendChild(styleNode);
+    window.addEventListener('orientationchange', refresh, true);
+
+    function refresh() {
+      var vh = window.innerHeight;
+      var vw = window.innerWidth;
+      var content = '.w-lightbox-content, .w-lightbox-view, .w-lightbox-view:before {' + 'height:' + vh + 'px' + '}' + '.w-lightbox-view {' + 'width:' + vw + 'px' + '}' + '.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {' + 'height:' + 0.86 * vh + 'px' + '}' + '.w-lightbox-image {' + 'max-width:' + vw + 'px;' + 'max-height:' + vh + 'px' + '}' + '.w-lightbox-group .w-lightbox-image {' + 'max-height:' + 0.86 * vh + 'px' + '}' + '.w-lightbox-strip {' + 'padding: 0 ' + 0.01 * vh + 'px' + '}' + '.w-lightbox-item {' + 'width:' + 0.1 * vh + 'px;' + 'padding:' + 0.02 * vh + 'px ' + 0.01 * vh + 'px' + '}' + '.w-lightbox-thumbnail {' + 'height:' + 0.1 * vh + 'px' + '}' + '@media (min-width: 768px) {' + '.w-lightbox-content, .w-lightbox-view, .w-lightbox-view:before {' + 'height:' + 0.96 * vh + 'px' + '}' + '.w-lightbox-content {' + 'margin-top:' + 0.02 * vh + 'px' + '}' + '.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {' + 'height:' + 0.84 * vh + 'px' + '}' + '.w-lightbox-image {' + 'max-width:' + 0.96 * vw + 'px;' + 'max-height:' + 0.96 * vh + 'px' + '}' + '.w-lightbox-group .w-lightbox-image {' + 'max-width:' + 0.823 * vw + 'px;' + 'max-height:' + 0.84 * vh + 'px' + '}' + '}';
+
+      styleNode.textContent = content;
+    }
+
+    refresh();
+  })();
+
+  return lightbox;
+}
+
+Webflow.define('lightbox', module.exports = function ($) {
   var api = {};
-  var $win = $(window);
-  var designer;
   var inApp = Webflow.env();
-  var location = window.location;
-  var tempLink = document.createElement('a');
-  var linkCurrent = 'w--current';
-  var validHash = /^#[\w:.-]+$/;
-  var indexPage = /index\.(html|php)$/;
-  var dirList = /\/$/;
-  var anchors;
-  var slug;
+  var lightbox = createLightbox(window, document, $, inApp ? '#lightbox-mountpoint' : 'body');
+  var $doc = $(document);
+  var $lightboxes;
+  var designer;
+  var namespace = '.w-lightbox';
+  var groups;
 
   // -----------------------------------
   // Module methods
@@ -17200,82 +17570,114 @@ Webflow.define('links', module.exports = function ($, _) {
 
   function init() {
     designer = inApp && Webflow.env('design');
-    slug = Webflow.env('slug') || location.pathname || '';
 
-    // Reset scroll listener, init anchors
-    Webflow.scroll.off(scroll);
-    anchors = [];
+    // Reset Lightbox
+    lightbox.destroy();
 
-    // Test all links for a selectable href
-    var links = document.links;
-    for (var i = 0; i < links.length; ++i) {
-      select(links[i]);
-    }
+    // Reset groups
+    groups = {};
 
-    // Listen for scroll if any anchors exist
-    if (anchors.length) {
-      Webflow.scroll.on(scroll);
-      scroll();
-    }
+    // Find all instances on the page
+    $lightboxes = $doc.find(namespace);
+
+    // Instantiate all lighboxes
+    $lightboxes.webflowLightBox();
   }
 
-  function select(link) {
-    var href = designer && link.getAttribute('href-disabled') || link.getAttribute('href');
-    tempLink.href = href;
+  jQuery.fn.extend({
+    webflowLightBox: function webflowLightBox() {
+      var $el = this;
+      $.each($el, function (i, el) {
+        // Store state in data
+        var data = $.data(el, namespace);
+        if (!data) {
+          data = $.data(el, namespace, {
+            el: $(el),
+            mode: 'images',
+            images: [],
+            embed: ''
+          });
+        }
 
-    // Ignore any hrefs with a colon to safely avoid all uri schemes
-    if (href.indexOf(':') >= 0) {
+        // Remove old events
+        data.el.off(namespace);
+
+        // Set config from json script tag
+        configure(data);
+
+        // Add events based on mode
+        if (designer) {
+          data.el.on('setting' + namespace, configure.bind(null, data));
+        } else {
+          data.el.on('tap' + namespace, tapHandler(data))
+          // Prevent page scrolling to top when clicking on lightbox triggers.
+          .on('click' + namespace, function (e) {
+            e.preventDefault();
+          });
+        }
+      });
+    }
+  });
+
+  function configure(data) {
+    var json = data.el.children('.w-json').html();
+    var groupName;
+    var groupItems;
+
+    if (!json) {
+      data.items = [];
       return;
     }
 
-    var $link = $(link);
-
-    // Check for valid hash links w/ sections and use scroll anchor
-    if (href.indexOf('#') === 0 && validHash.test(href)) {
-      var $section = $(href);
-      $section.length && anchors.push({ link: $link, sec: $section, active: false });
-      return;
+    try {
+      json = JSON.parse(json);
+    } catch (e) {
+      console.error('Malformed lightbox JSON configuration.', e);
     }
 
-    // Ignore empty # links
-    if (href === '#' || href === '') {
-      return;
-    }
+    supportOldLightboxJson(json);
 
-    // Determine whether the link should be selected
-    var match = tempLink.href === location.href || href === slug || indexPage.test(href) && dirList.test(slug);
-    setClass($link, linkCurrent, match);
-  }
+    groupName = json.group;
 
-  function scroll() {
-    var viewTop = $win.scrollTop();
-    var viewHeight = $win.height();
-
-    // Check each anchor for a section in view
-    _.each(anchors, function (anchor) {
-      var $link = anchor.link;
-      var $section = anchor.sec;
-      var top = $section.offset().top;
-      var height = $section.outerHeight();
-      var offset = viewHeight * 0.5;
-      var active = $section.is(':visible') && top + height - offset >= viewTop && top + offset <= viewTop + viewHeight;
-      if (anchor.active === active) {
-        return;
+    if (groupName) {
+      groupItems = groups[groupName];
+      if (!groupItems) {
+        groupItems = groups[groupName] = [];
       }
-      anchor.active = active;
-      setClass($link, linkCurrent, active);
-    });
+
+      data.items = groupItems;
+
+      if (json.items.length) {
+        data.index = groupItems.length;
+        groupItems.push.apply(groupItems, json.items);
+      }
+    } else {
+      data.items = json.items;
+    }
   }
 
-  function setClass($elem, className, add) {
-    var exists = $elem.hasClass(className);
-    if (add && exists) {
-      return;
+  function tapHandler(data) {
+    return function () {
+      data.items.length && lightbox(data.items, data.index || 0);
+    };
+  }
+
+  function supportOldLightboxJson(data) {
+    if (data.images) {
+      data.images.forEach(function (item) {
+        item.type = 'image';
+      });
+      data.items = data.images;
     }
-    if (!add && !exists) {
-      return;
+
+    if (data.embed) {
+      data.embed.type = 'video';
+      data.items = [data.embed];
     }
-    add ? $elem.addClass(className) : $elem.removeClass(className);
+
+    if (data.groupId) {
+      data.group = data.groupId;
+    }
   }
 
   // Export module
@@ -17283,7 +17685,7 @@ Webflow.define('links', module.exports = function ($, _) {
 });
 
 /***/ }),
-/* 335 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17293,7 +17695,7 @@ Webflow.define('links', module.exports = function ($, _) {
  * Webflow: Maps widget
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
 
 Webflow.define('maps', module.exports = function ($, _) {
   var api = {};
@@ -17488,7 +17890,7 @@ Webflow.define('maps', module.exports = function ($, _) {
 });
 
 /***/ }),
-/* 336 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17498,7 +17900,7 @@ Webflow.define('maps', module.exports = function ($, _) {
  * Webflow: Navbar component
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
 var IXEvents = __webpack_require__(93);
 
 Webflow.define('navbar', module.exports = function ($, _) {
@@ -17887,17 +18289,229 @@ Webflow.define('navbar', module.exports = function ($, _) {
 });
 
 /***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// @wf-will-never-add-flow-to-this-file
+/* eslint-disable */
+/**
+ * Webflow: Brand pages on the subdomain
+ */
+
+var Webflow = __webpack_require__(1);
+
+Webflow.define('brand', module.exports = function ($) {
+  var api = {};
+  var doc = document;
+  var $html = $('html');
+  var $body = $('body');
+  var namespace = '.w-webflow-badge';
+  var location = window.location;
+  var isPhantom = /PhantomJS/i.test(navigator.userAgent);
+  var fullScreenEvents = 'fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange';
+  var brandElement;
+
+  // -----------------------------------
+  // Module methods
+
+  api.ready = function () {
+    var shouldBrand = $html.attr('data-wf-status');
+    var publishedDomain = $html.attr('data-wf-domain') || '';
+    if (/\.webflow\.io$/i.test(publishedDomain) && location.hostname !== publishedDomain) {
+      shouldBrand = true;
+    }
+    if (shouldBrand && !isPhantom) {
+      brandElement = brandElement || createBadge();
+      ensureBrand();
+      setTimeout(ensureBrand, 500);
+
+      $(doc).off(fullScreenEvents, onFullScreenChange).on(fullScreenEvents, onFullScreenChange);
+    }
+  };
+
+  function onFullScreenChange() {
+    var fullScreen = doc.fullScreen || doc.mozFullScreen || doc.webkitIsFullScreen || doc.msFullscreenElement || Boolean(doc.webkitFullscreenElement);
+    $(brandElement).attr('style', fullScreen ? 'display: none !important;' : '');
+  }
+
+  function createBadge() {
+    var $brand = $('<a class="w-webflow-badge"></a>').attr('href', 'https://webflow.com?utm_campaign=brandjs');
+
+    var $logoArt = $('<img>').attr('src', 'https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-icon.60efbf6ec9.svg').css({
+      marginRight: '8px',
+      width: '16px'
+    });
+
+    var $logoText = $('<img>').attr('src', 'https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg');
+
+    $brand.append($logoArt, $logoText);
+    return $brand[0];
+  }
+
+  function ensureBrand() {
+    var found = $body.children(namespace);
+    var match = found.length && found.get(0) === brandElement;
+    var inEditor = Webflow.env('editor');
+    if (match) {
+      // Remove brand when Editor is active
+      if (inEditor) {
+        found.remove();
+      }
+      // Exit early, brand is in place
+      return;
+    }
+    // Remove any invalid brand elements
+    if (found.length) {
+      found.remove();
+    }
+    // Append the brand (unless Editor is active)
+    if (!inEditor) {
+      $body.append(brandElement);
+    }
+  }
+
+  // Export module
+  return api;
+});
+
+/***/ }),
 /* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+// @wf-will-never-add-flow-to-this-file
+/* eslint-disable */
+/**
+ * Webflow: Auto-select links to current page or section
+ */
+
+var Webflow = __webpack_require__(1);
+
+Webflow.define('links', module.exports = function ($, _) {
+  var api = {};
+  var $win = $(window);
+  var designer;
+  var inApp = Webflow.env();
+  var location = window.location;
+  var tempLink = document.createElement('a');
+  var linkCurrent = 'w--current';
+  var validHash = /^#[\w:.-]+$/;
+  var indexPage = /index\.(html|php)$/;
+  var dirList = /\/$/;
+  var anchors;
+  var slug;
+
+  // -----------------------------------
+  // Module methods
+
+  api.ready = api.design = api.preview = init;
+
+  // -----------------------------------
+  // Private methods
+
+  function init() {
+    designer = inApp && Webflow.env('design');
+    slug = Webflow.env('slug') || location.pathname || '';
+
+    // Reset scroll listener, init anchors
+    Webflow.scroll.off(scroll);
+    anchors = [];
+
+    // Test all links for a selectable href
+    var links = document.links;
+    for (var i = 0; i < links.length; ++i) {
+      select(links[i]);
+    }
+
+    // Listen for scroll if any anchors exist
+    if (anchors.length) {
+      Webflow.scroll.on(scroll);
+      scroll();
+    }
+  }
+
+  function select(link) {
+    var href = designer && link.getAttribute('href-disabled') || link.getAttribute('href');
+    tempLink.href = href;
+
+    // Ignore any hrefs with a colon to safely avoid all uri schemes
+    if (href.indexOf(':') >= 0) {
+      return;
+    }
+
+    var $link = $(link);
+
+    // Check for valid hash links w/ sections and use scroll anchor
+    if (href.indexOf('#') === 0 && validHash.test(href)) {
+      var $section = $(href);
+      $section.length && anchors.push({ link: $link, sec: $section, active: false });
+      return;
+    }
+
+    // Ignore empty # links
+    if (href === '#' || href === '') {
+      return;
+    }
+
+    // Determine whether the link should be selected
+    var match = tempLink.href === location.href || href === slug || indexPage.test(href) && dirList.test(slug);
+    setClass($link, linkCurrent, match);
+  }
+
+  function scroll() {
+    var viewTop = $win.scrollTop();
+    var viewHeight = $win.height();
+
+    // Check each anchor for a section in view
+    _.each(anchors, function (anchor) {
+      var $link = anchor.link;
+      var $section = anchor.sec;
+      var top = $section.offset().top;
+      var height = $section.outerHeight();
+      var offset = viewHeight * 0.5;
+      var active = $section.is(':visible') && top + height - offset >= viewTop && top + offset <= viewTop + viewHeight;
+      if (anchor.active === active) {
+        return;
+      }
+      anchor.active = active;
+      setClass($link, linkCurrent, active);
+    });
+  }
+
+  function setClass($elem, className, add) {
+    var exists = $elem.hasClass(className);
+    if (add && exists) {
+      return;
+    }
+    if (!add && !exists) {
+      return;
+    }
+    add ? $elem.addClass(className) : $elem.removeClass(className);
+  }
+
+  // Export module
+  return api;
+});
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// @wf-will-never-add-flow-to-this-file
+/* eslint-disable */
 /**
  * Webflow: Smooth scroll
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
 
 Webflow.define('scroll', module.exports = function ($) {
   var $doc = $(document);
@@ -18045,17 +18659,19 @@ Webflow.define('scroll', module.exports = function ($) {
 });
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+// @wf-will-never-add-flow-to-this-file
+/* eslint-disable */
 /**
  * Webflow: Touch events
  */
 
-var Webflow = __webpack_require__(3);
+var Webflow = __webpack_require__(1);
 
 Webflow.define('touch', module.exports = function ($) {
   var api = {};
@@ -18135,7 +18751,9 @@ Webflow.define('touch', module.exports = function ($) {
 
       // Allow swipes while pointer is down, but prevent them during text selection
       if (Math.abs(velocityX) > thresholdX && getSelection && String(getSelection()) === '') {
-        triggerEvent('swipe', evt, { direction: velocityX > 0 ? 'right' : 'left' });
+        triggerEvent('swipe', evt, {
+          direction: velocityX > 0 ? 'right' : 'left'
+        });
         cancel();
       }
 
@@ -18202,5 +18820,5 @@ Webflow.define('touch', module.exports = function ($) {
  * Webflow: Interactions 2.0: Init
  */
 Webflow.require('ix2').init(
-{"events":{"e-13":{"id":"e-13","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-10","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-14"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340832181},"e-14":{"id":"e-14","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-13"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340832182},"e-15":{"id":"e-15","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-16"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340959860},"e-16":{"id":"e-16","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-15"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340959861},"e-17":{"id":"e-17","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-18"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341141812},"e-18":{"id":"e-18","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-15","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-17"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341141812},"e-19":{"id":"e-19","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-16","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-20"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341199701},"e-20":{"id":"e-20","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-17","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-19"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341199702},"e-31":{"id":"e-31","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-21","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-32"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426444883},"e-32":{"id":"e-32","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-22","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-31"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426444886},"e-33":{"id":"e-33","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-23","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-34"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426464111},"e-34":{"id":"e-34","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-24","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-33"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426464112},"e-51":{"id":"e-51","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-41","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|28e72a38-fa0b-d355-a5d5-56c53423c486"},"config":[{"continuousParameterGroupId":"a-41-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530881299},"e-53":{"id":"e-53","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-46","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|1f70c1dc-43e7-cfdf-0bb2-7a3485a2568a"},"config":[{"continuousParameterGroupId":"a-46-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530902476},"e-54":{"id":"e-54","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-42","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|e137e021-c285-a34c-df12-e84d40ada12c"},"config":[{"continuousParameterGroupId":"a-42-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530910167},"e-57":{"id":"e-57","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-38","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|6349772a-4703-362b-a937-a3bbfe67acaf"},"config":[{"continuousParameterGroupId":"a-38-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530988369},"e-58":{"id":"e-58","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-39","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|ce58b099-0147-7e7d-0b25-a258e94a3eeb"},"config":[{"continuousParameterGroupId":"a-39-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531036709},"e-59":{"id":"e-59","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-47","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"config":[{"continuousParameterGroupId":"a-47-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531141176},"e-60":{"id":"e-60","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-43","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|196489d2-2635-7c67-0abe-8a6650b1b1f2"},"config":[{"continuousParameterGroupId":"a-43-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531351235},"e-61":{"id":"e-61","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-44","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|d86914e5-8a06-1cad-682f-49849c2761a1"},"config":[{"continuousParameterGroupId":"a-44-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531394856},"e-66":{"id":"e-66","eventTypeId":"PAGE_START","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-49","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-67"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"PAGE","styleBlockIds":[],"id":"5c6275b0c8dd8b6bbf84d663"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549773832561},"e-72":{"id":"e-72","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-52","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-73"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550019829027},"e-73":{"id":"e-73","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-53","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-72"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550019829029},"e-76":{"id":"e-76","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-57","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-77"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021600374},"e-77":{"id":"e-77","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-58","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-76"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021600375},"e-78":{"id":"e-78","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-56","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-79"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021726509},"e-79":{"id":"e-79","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-59","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-78"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021726510},"e-84":{"id":"e-84","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-66","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d1"},"config":[{"continuousParameterGroupId":"a-66-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550038381616},"e-85":{"id":"e-85","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-69","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"config":[{"continuousParameterGroupId":"a-69-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550040058975}},"actionLists":{"a-5":{"id":"a-5","title":"New Mouse Animation","continuousParameterGroups":[{"id":"a-5-p","type":"MOUSE_X","parameterLabel":"Mouse X","continuousActionGroups":[]},{"id":"a-5-p-2","type":"MOUSE_Y","parameterLabel":"Mouse Y","continuousActionGroups":[]}],"createdOn":1549253168984},"a-10":{"id":"a-10","title":"movColHover","actionItemGroups":[{"actionItems":[{"id":"a-10-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549340835844,"useFirstGroupAsInitialState":false},"a-11":{"id":"a-11","title":"movBackColHover","actionItemGroups":[{"actionItems":[{"id":"a-11-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549340888309,"useFirstGroupAsInitialState":false},"a-12":{"id":"a-12","title":"mov2","actionItemGroups":[{"actionItems":[{"id":"a-12-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341004626,"useFirstGroupAsInitialState":false},"a-13":{"id":"a-13","title":"movBack2","actionItemGroups":[{"actionItems":[{"id":"a-13-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341030868,"useFirstGroupAsInitialState":false},"a-14":{"id":"a-14","title":"mov3","actionItemGroups":[{"actionItems":[{"id":"a-14-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341152920,"useFirstGroupAsInitialState":false},"a-15":{"id":"a-15","title":"movBack3","actionItemGroups":[{"actionItems":[{"id":"a-15-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341174622,"useFirstGroupAsInitialState":false},"a-16":{"id":"a-16","title":"mov4","actionItemGroups":[{"actionItems":[{"id":"a-16-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341203360,"useFirstGroupAsInitialState":false},"a-17":{"id":"a-17","title":"movBack4","actionItemGroups":[{"actionItems":[{"id":"a-17-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341220785,"useFirstGroupAsInitialState":false},"a-18":{"id":"a-18","title":"New Timed Animation","actionItemGroups":[],"createdOn":1549343235981,"useFirstGroupAsInitialState":false},"a-19":{"id":"a-19","title":"colorChang2","actionItemGroups":[{"actionItems":[{"id":"a-19-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1549425606534,"useFirstGroupAsInitialState":false},"a-20":{"id":"a-20","title":"color2Out","actionItemGroups":[{"actionItems":[{"id":"a-20-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":73,"gValue":73,"bValue":73,"aValue":1}}]}],"createdOn":1549425662209,"useFirstGroupAsInitialState":false},"a-21":{"id":"a-21","title":"changeColor3","actionItemGroups":[{"actionItems":[{"id":"a-21-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1549426111731,"useFirstGroupAsInitialState":false},"a-22":{"id":"a-22","title":"endColor3","actionItemGroups":[{"actionItems":[{"id":"a-22-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":73,"gValue":73,"bValue":73,"aValue":1}}]}],"createdOn":1549426155579,"useFirstGroupAsInitialState":false},"a-23":{"id":"a-23","title":"changeBack3","actionItemGroups":[{"actionItems":[{"id":"a-23-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b88"},"rValue":95,"gValue":207,"bValue":150,"aValue":1}}]}],"createdOn":1549426218576,"useFirstGroupAsInitialState":false},"a-24":{"id":"a-24","title":"endBackColor3","actionItemGroups":[{"actionItems":[{"id":"a-24-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b88"},"rValue":245,"gValue":245,"bValue":245,"aValue":1}}]}],"createdOn":1549426303396,"useFirstGroupAsInitialState":false},"a-25":{"id":"a-25","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-25-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-25-n","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":0.8,"yValue":0.8,"zValue":1.1,"locked":true}}]},{"keyframe":100,"actionItems":[{"id":"a-25-n-2","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"locked":true}}]}]}],"createdOn":1549518425524},"a-26":{"id":"a-26","title":"New Timed Animation","actionItemGroups":[{"actionItems":[{"id":"a-26-n","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"ease","duration":3500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":16,"yValue":7,"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-26-n-2","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":-7,"yValue":3,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]}],"createdOn":1549518903145,"useFirstGroupAsInitialState":false},"a-27":{"id":"a-27","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-27-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":56,"actionItems":[{"id":"a-27-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-27-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"value":1,"unit":""}}]},{"keyframe":88,"actionItems":[{"id":"a-27-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"value":0.16,"unit":""}},{"id":"a-27-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":465,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549520192172},"a-28":{"id":"a-28","title":"New Scroll Animation3","continuousParameterGroups":[{"id":"a-28-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-28-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"xValue":-500,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-28-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"value":0,"unit":""}}]},{"keyframe":26,"actionItems":[{"id":"a-28-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-28-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"value":1,"unit":""}}]}]}],"createdOn":1549520445339},"a-29":{"id":"a-29","title":"New Scroll Animation4","continuousParameterGroups":[{"id":"a-29-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":16,"actionItems":[{"id":"a-29-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"xValue":-500,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-29-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"value":0,"unit":""}}]},{"keyframe":30,"actionItems":[{"id":"a-29-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-29-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"value":1,"unit":""}}]}]}],"createdOn":1549520829894},"a-30":{"id":"a-30","title":"New Scroll Animation5","continuousParameterGroups":[{"id":"a-30-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":18,"actionItems":[{"id":"a-30-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"xValue":-500,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-30-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"value":0,"unit":""}}]},{"keyframe":28,"actionItems":[{"id":"a-30-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-30-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"value":1,"unit":""}}]}]}],"createdOn":1549521071840},"a-38":{"id":"a-38","title":"flag","continuousParameterGroups":[{"id":"a-38-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-38-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|6349772a-4703-362b-a937-a3bbfe67acaf"},"yValue":152,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-38-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|6349772a-4703-362b-a937-a3bbfe67acaf"},"yValue":-291,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549530992310},"a-39":{"id":"a-39","title":"shield","continuousParameterGroups":[{"id":"a-39-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-39-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce58b099-0147-7e7d-0b25-a258e94a3eeb"},"yValue":65,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-39-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce58b099-0147-7e7d-0b25-a258e94a3eeb"},"yValue":-109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531040144},"a-40":{"id":"a-40","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-40-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-40-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-40-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":-39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531144956},"a-41":{"id":"a-41","title":"phoneRec","continuousParameterGroups":[{"id":"a-41-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-41-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|28e72a38-fa0b-d355-a5d5-56c53423c486"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-41-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|28e72a38-fa0b-d355-a5d5-56c53423c486"},"yValue":-109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531264185},"a-42":{"id":"a-42","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-42-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-42-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|e137e021-c285-a34c-df12-e84d40ada12c"},"yValue":109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-42-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|e137e021-c285-a34c-df12-e84d40ada12c"},"yValue":4,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531308853},"a-43":{"id":"a-43","title":"drone","continuousParameterGroups":[{"id":"a-43-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-43-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|196489d2-2635-7c67-0abe-8a6650b1b1f2"},"yValue":-22,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-43-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|196489d2-2635-7c67-0abe-8a6650b1b1f2"},"yValue":-74,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531354956},"a-44":{"id":"a-44","title":"connect","continuousParameterGroups":[{"id":"a-44-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-44-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d86914e5-8a06-1cad-682f-49849c2761a1"},"yValue":152,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-44-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d86914e5-8a06-1cad-682f-49849c2761a1"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531399676},"a-45":{"id":"a-45","title":"connect2","continuousParameterGroups":[{"id":"a-45-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-45-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce6bf221-d9a3-12c1-c380-47da6ec4de46"},"yValue":161,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-45-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce6bf221-d9a3-12c1-c380-47da6ec4de46"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531447427},"a-46":{"id":"a-46","title":"servers","continuousParameterGroups":[{"id":"a-46-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-46-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1f70c1dc-43e7-cfdf-0bb2-7a3485a2568a"},"yValue":48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-46-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1f70c1dc-43e7-cfdf-0bb2-7a3485a2568a"},"yValue":-57,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531476670},"a-47":{"id":"a-47","title":"sound","continuousParameterGroups":[{"id":"a-47-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-47-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":30,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-47-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":-30,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531878166},"a-48":{"id":"a-48","title":"loa","actionItemGroups":[],"createdOn":1549773810828,"useFirstGroupAsInitialState":false},"a-49":{"id":"a-49","title":"loadUp","actionItemGroups":[{"actionItems":[{"id":"a-49-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"yValue":317,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-49-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-49-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"easeIn","duration":600,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"value":1,"unit":""}},{"id":"a-49-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549773836045,"useFirstGroupAsInitialState":true},"a-50":{"id":"a-50","title":"loadUp2","actionItemGroups":[],"createdOn":1549775115723,"useFirstGroupAsInitialState":false},"a-51":{"id":"a-51","title":"h21","actionItemGroups":[{"actionItems":[{"id":"a-51-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"yValue":109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"value":0,"unit":""}},{"id":"a-51-n-5","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"yValue":187,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-6","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-51-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":600,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"value":1,"unit":""}},{"id":"a-51-n-7","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-8","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":100,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"value":1,"unit":""}}]}],"createdOn":1549775582791,"useFirstGroupAsInitialState":true},"a-52":{"id":"a-52","title":"59Left","actionItemGroups":[{"actionItems":[{"id":"a-52-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"yValue":-6,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550019835543,"useFirstGroupAsInitialState":false},"a-53":{"id":"a-53","title":"59LeftOut","actionItemGroups":[{"actionItems":[{"id":"a-53-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550019934710,"useFirstGroupAsInitialState":false},"a-54":{"id":"a-54","title":"59Right","actionItemGroups":[{"actionItems":[{"id":"a-54-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|d0a311c2-9006-0861-95ee-fdc272b4cc5e"},"yValue":-6,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550019998221,"useFirstGroupAsInitialState":false},"a-55":{"id":"a-55","title":"New Timed Animation","actionItemGroups":[{"actionItems":[{"id":"a-55-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|d0a311c2-9006-0861-95ee-fdc272b4cc5e"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550020029508,"useFirstGroupAsInitialState":false},"a-56":{"id":"a-56","title":"IconLeftColor","actionItemGroups":[{"actionItems":[{"id":"a-56-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|dc3c9505-412e-9a86-4e33-31e658184084"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1550020097970,"useFirstGroupAsInitialState":false},"a-57":{"id":"a-57","title":"iconBackColorLeft","actionItemGroups":[{"actionItems":[{"id":"a-57-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|e5e831ef-4fbe-12af-6463-426481c3775e"},"rValue":42,"gValue":223,"bValue":177,"aValue":1}}]}],"createdOn":1550020172785,"useFirstGroupAsInitialState":false},"a-58":{"id":"a-58","title":"IconBackColorLeftOut","actionItemGroups":[{"actionItems":[{"id":"a-58-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|e5e831ef-4fbe-12af-6463-426481c3775e"},"rValue":245,"gValue":245,"bValue":245,"aValue":1}}]}],"createdOn":1550021532240,"useFirstGroupAsInitialState":false},"a-59":{"id":"a-59","title":"IconLeftColorOut","actionItemGroups":[{"actionItems":[{"id":"a-59-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|dc3c9505-412e-9a86-4e33-31e658184084"},"rValue":59,"gValue":58,"bValue":58,"aValue":1}}]}],"createdOn":1550021661037,"useFirstGroupAsInitialState":false},"a-60":{"id":"a-60","title":"iconBackColorRight","actionItemGroups":[{"actionItems":[{"id":"a-60-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|835c7d73-68d0-ddee-14c8-4006dc1a3e48"},"rValue":42,"gValue":223,"bValue":177,"aValue":1}}]}],"createdOn":1550022136493,"useFirstGroupAsInitialState":false},"a-61":{"id":"a-61","title":"iconBackColorRightOut","actionItemGroups":[{"actionItems":[{"id":"a-61-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|835c7d73-68d0-ddee-14c8-4006dc1a3e48"},"rValue":245,"gValue":245,"bValue":245,"aValue":1}}]}],"createdOn":1550022202315,"useFirstGroupAsInitialState":false},"a-62":{"id":"a-62","title":"iconCircleRightColor","actionItemGroups":[{"actionItems":[{"id":"a-62-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|359853dd-456a-cae3-d9c3-5f12fd9f4026"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1550022445493,"useFirstGroupAsInitialState":false},"a-63":{"id":"a-63","title":"iconCircleRightColorOut","actionItemGroups":[{"actionItems":[{"id":"a-63-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|359853dd-456a-cae3-d9c3-5f12fd9f4026"},"rValue":59,"gValue":58,"bValue":58,"aValue":1}}]}],"createdOn":1550022512041,"useFirstGroupAsInitialState":false},"a-64":{"id":"a-64","title":"hover","actionItemGroups":[{"actionItems":[{"id":"a-64-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":1000,"target":{"id":"5c638877352968c1f234ddfb|049da01b-cffc-a7eb-aaeb-170d2f79cdc6"},"yValue":-48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"actionItems":[{"id":"a-64-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c638877352968c1f234ddfb|049da01b-cffc-a7eb-aaeb-170d2f79cdc6"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550030703665,"useFirstGroupAsInitialState":false},"a-65":{"id":"a-65","title":"IMG45SCROLL","actionItemGroups":[],"createdOn":1550037914251,"useFirstGroupAsInitialState":false},"a-66":{"id":"a-66","title":"IMG45SCROLL","continuousParameterGroups":[{"id":"a-66-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-66-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d1"},"yValue":-30,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-66-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d1"},"yValue":-187,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550038386381},"a-67":{"id":"a-67","title":"IMG39SCROLL","continuousParameterGroups":[{"id":"a-67-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-67-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-67-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-57,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550038513780},"a-68":{"id":"a-68","title":"NEW39","continuousParameterGroups":[{"id":"a-68-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-68-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-22,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-68-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-117,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550038842127},"a-69":{"id":"a-69","title":"JJ","continuousParameterGroups":[{"id":"a-69-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-69-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-69-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-230,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550040062138}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}
+{"events":{"e-13":{"id":"e-13","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-10","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-14"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340832181},"e-14":{"id":"e-14","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-13"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340832182},"e-15":{"id":"e-15","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-16"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340959860},"e-16":{"id":"e-16","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-15"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549340959861},"e-17":{"id":"e-17","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-18"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341141812},"e-18":{"id":"e-18","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-15","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-17"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341141812},"e-19":{"id":"e-19","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-16","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-20"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341199701},"e-20":{"id":"e-20","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-17","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-19"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549341199702},"e-31":{"id":"e-31","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-21","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-32"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426444883},"e-32":{"id":"e-32","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-22","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-31"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426444886},"e-33":{"id":"e-33","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-23","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-34"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426464111},"e-34":{"id":"e-34","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-24","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-33"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|9dcc86d2-b526-f79e-5f57-ad5c086e0ac1"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549426464112},"e-51":{"id":"e-51","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-41","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|28e72a38-fa0b-d355-a5d5-56c53423c486"},"config":[{"continuousParameterGroupId":"a-41-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530881299},"e-53":{"id":"e-53","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-46","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|1f70c1dc-43e7-cfdf-0bb2-7a3485a2568a"},"config":[{"continuousParameterGroupId":"a-46-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530902476},"e-54":{"id":"e-54","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-42","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|e137e021-c285-a34c-df12-e84d40ada12c"},"config":[{"continuousParameterGroupId":"a-42-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530910167},"e-57":{"id":"e-57","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-38","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|6349772a-4703-362b-a937-a3bbfe67acaf"},"config":[{"continuousParameterGroupId":"a-38-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549530988369},"e-58":{"id":"e-58","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-39","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|ce58b099-0147-7e7d-0b25-a258e94a3eeb"},"config":[{"continuousParameterGroupId":"a-39-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531036709},"e-59":{"id":"e-59","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-47","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"config":[{"continuousParameterGroupId":"a-47-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531141176},"e-60":{"id":"e-60","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-43","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|196489d2-2635-7c67-0abe-8a6650b1b1f2"},"config":[{"continuousParameterGroupId":"a-43-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531351235},"e-61":{"id":"e-61","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-44","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|d86914e5-8a06-1cad-682f-49849c2761a1"},"config":[{"continuousParameterGroupId":"a-44-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1549531394856},"e-66":{"id":"e-66","eventTypeId":"PAGE_START","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-49","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-67"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"PAGE","styleBlockIds":[],"id":"5c6275b0c8dd8b6bbf84d663"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1549773832561},"e-72":{"id":"e-72","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-52","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-73"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550019829027},"e-73":{"id":"e-73","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-53","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-72"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550019829029},"e-76":{"id":"e-76","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-57","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-77"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021600374},"e-77":{"id":"e-77","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-58","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-76"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021600375},"e-78":{"id":"e-78","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-56","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-79"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021726509},"e-79":{"id":"e-79","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-59","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-78"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550021726510},"e-84":{"id":"e-84","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-66","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d1"},"config":[{"continuousParameterGroupId":"a-66-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550038381616},"e-85":{"id":"e-85","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-69","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"config":[{"continuousParameterGroupId":"a-69-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550040058975},"e-86":{"id":"e-86","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-54","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-87"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550077366693},"e-87":{"id":"e-87","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-55","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-86"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550077366696},"e-88":{"id":"e-88","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-60","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-89"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550077576004},"e-89":{"id":"e-89","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-61","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-88"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550077576005},"e-90":{"id":"e-90","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-62","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-91"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550077727533},"e-91":{"id":"e-91","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-63","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-90"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"config":{"loop":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1550077727535},"e-92":{"id":"e-92","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-70","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6491c9c90f55a104fd1cb5|71de449a-6686-bf0a-dd68-3a17fed0171b"},"config":[{"continuousParameterGroupId":"a-70-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550124375909},"e-93":{"id":"e-93","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-71","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6491c9c90f55a104fd1cb5|3a26a9ea-2bcc-232b-b933-0d3d10edac86"},"config":[{"continuousParameterGroupId":"a-71-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550125573981},"e-94":{"id":"e-94","eventTypeId":"SCROLLING_IN_VIEW","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-72","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6491c9c90f55a104fd1cb5|8a865266-5376-65f0-a139-08279da3012c"},"config":[{"continuousParameterGroupId":"a-72-p","smoothing":50,"startsEntering":true,"addStartOffset":false,"addOffsetValue":50,"startsExiting":false,"addEndOffset":false,"endOffsetValue":50}],"createdOn":1550125975934},"e-95":{"id":"e-95","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"SLIDE_EFFECT","config":{"actionListId":"e-95-slideInRight","autoStopEventId":"e-96"},"instant":false},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"5c6491c9c90f55a104fd1cb5|e430549a-1387-2968-41a3-821fdb247c16"},"config":{"loop":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":0,"direction":"RIGHT","effectIn":true},"createdOn":1550126546642}},"actionLists":{"a-5":{"id":"a-5","title":"New Mouse Animation","continuousParameterGroups":[{"id":"a-5-p","type":"MOUSE_X","parameterLabel":"Mouse X","continuousActionGroups":[]},{"id":"a-5-p-2","type":"MOUSE_Y","parameterLabel":"Mouse Y","continuousActionGroups":[]}],"createdOn":1549253168984},"a-10":{"id":"a-10","title":"movColHover","actionItemGroups":[{"actionItems":[{"id":"a-10-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549340835844,"useFirstGroupAsInitialState":false},"a-11":{"id":"a-11","title":"movBackColHover","actionItemGroups":[{"actionItems":[{"id":"a-11-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|e4c86571-2a9c-4269-40b7-61f8108abf63"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549340888309,"useFirstGroupAsInitialState":false},"a-12":{"id":"a-12","title":"mov2","actionItemGroups":[{"actionItems":[{"id":"a-12-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341004626,"useFirstGroupAsInitialState":false},"a-13":{"id":"a-13","title":"movBack2","actionItemGroups":[{"actionItems":[{"id":"a-13-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|06c4b825-d88d-8451-d4a9-00ab565cece7"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341030868,"useFirstGroupAsInitialState":false},"a-14":{"id":"a-14","title":"mov3","actionItemGroups":[{"actionItems":[{"id":"a-14-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341152920,"useFirstGroupAsInitialState":false},"a-15":{"id":"a-15","title":"movBack3","actionItemGroups":[{"actionItems":[{"id":"a-15-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|24ade729-bb77-f553-4876-43d69b2fd88d"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341174622,"useFirstGroupAsInitialState":false},"a-16":{"id":"a-16","title":"mov4","actionItemGroups":[{"actionItems":[{"id":"a-16-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"yValue":-5,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341203360,"useFirstGroupAsInitialState":false},"a-17":{"id":"a-17","title":"movBack4","actionItemGroups":[{"actionItems":[{"id":"a-17-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":200,"target":{"id":"5c6275b0c8dd8b141584d65b|b90d1413-0824-41f5-6013-7e72300e1f91"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549341220785,"useFirstGroupAsInitialState":false},"a-18":{"id":"a-18","title":"New Timed Animation","actionItemGroups":[],"createdOn":1549343235981,"useFirstGroupAsInitialState":false},"a-19":{"id":"a-19","title":"colorChang2","actionItemGroups":[{"actionItems":[{"id":"a-19-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1549425606534,"useFirstGroupAsInitialState":false},"a-20":{"id":"a-20","title":"color2Out","actionItemGroups":[{"actionItems":[{"id":"a-20-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":73,"gValue":73,"bValue":73,"aValue":1}}]}],"createdOn":1549425662209,"useFirstGroupAsInitialState":false},"a-21":{"id":"a-21","title":"changeColor3","actionItemGroups":[{"actionItems":[{"id":"a-21-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1549426111731,"useFirstGroupAsInitialState":false},"a-22":{"id":"a-22","title":"endColor3","actionItemGroups":[{"actionItems":[{"id":"a-22-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b89"},"rValue":73,"gValue":73,"bValue":73,"aValue":1}}]}],"createdOn":1549426155579,"useFirstGroupAsInitialState":false},"a-23":{"id":"a-23","title":"changeBack3","actionItemGroups":[{"actionItems":[{"id":"a-23-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b88"},"rValue":95,"gValue":207,"bValue":150,"aValue":1}}]}],"createdOn":1549426218576,"useFirstGroupAsInitialState":false},"a-24":{"id":"a-24","title":"endBackColor3","actionItemGroups":[{"actionItems":[{"id":"a-24-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|93a26c86-2684-0c67-6b12-84e1aef39b88"},"rValue":245,"gValue":245,"bValue":245,"aValue":1}}]}],"createdOn":1549426303396,"useFirstGroupAsInitialState":false},"a-25":{"id":"a-25","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-25-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-25-n","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":0.8,"yValue":0.8,"zValue":1.1,"locked":true}}]},{"keyframe":100,"actionItems":[{"id":"a-25-n-2","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"locked":true}}]}]}],"createdOn":1549518425524},"a-26":{"id":"a-26","title":"New Timed Animation","actionItemGroups":[{"actionItems":[{"id":"a-26-n","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"ease","duration":3500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":16,"yValue":7,"zValue":0,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]},{"actionItems":[{"id":"a-26-n-2","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":-7,"yValue":3,"xUnit":"DEG","yUnit":"DEG","zUnit":"DEG"}}]}],"createdOn":1549518903145,"useFirstGroupAsInitialState":false},"a-27":{"id":"a-27","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-27-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":56,"actionItems":[{"id":"a-27-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-27-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"value":1,"unit":""}}]},{"keyframe":88,"actionItems":[{"id":"a-27-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"value":0.16,"unit":""}},{"id":"a-27-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|880d99cb-fb9c-c1ec-7c54-92ee3abe2256"},"xValue":465,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549520192172},"a-28":{"id":"a-28","title":"New Scroll Animation3","continuousParameterGroups":[{"id":"a-28-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-28-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"xValue":-500,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-28-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"value":0,"unit":""}}]},{"keyframe":26,"actionItems":[{"id":"a-28-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-28-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|20435b7f-145a-f1d4-707f-7520786f3348"},"value":1,"unit":""}}]}]}],"createdOn":1549520445339},"a-29":{"id":"a-29","title":"New Scroll Animation4","continuousParameterGroups":[{"id":"a-29-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":16,"actionItems":[{"id":"a-29-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"xValue":-500,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-29-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"value":0,"unit":""}}]},{"keyframe":30,"actionItems":[{"id":"a-29-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-29-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1ec77316-eb47-944a-eb99-39a48b16aba5"},"value":1,"unit":""}}]}]}],"createdOn":1549520829894},"a-30":{"id":"a-30","title":"New Scroll Animation5","continuousParameterGroups":[{"id":"a-30-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":18,"actionItems":[{"id":"a-30-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"xValue":-500,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-30-n-3","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"value":0,"unit":""}}]},{"keyframe":28,"actionItems":[{"id":"a-30-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"xValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-30-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|0e8f27a7-8c2f-1c98-ed52-5a1f59c8f1c6"},"value":1,"unit":""}}]}]}],"createdOn":1549521071840},"a-38":{"id":"a-38","title":"flag","continuousParameterGroups":[{"id":"a-38-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-38-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|6349772a-4703-362b-a937-a3bbfe67acaf"},"yValue":152,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-38-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|6349772a-4703-362b-a937-a3bbfe67acaf"},"yValue":-291,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549530992310},"a-39":{"id":"a-39","title":"shield","continuousParameterGroups":[{"id":"a-39-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-39-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce58b099-0147-7e7d-0b25-a258e94a3eeb"},"yValue":65,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-39-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce58b099-0147-7e7d-0b25-a258e94a3eeb"},"yValue":-109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531040144},"a-40":{"id":"a-40","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-40-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-40-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-40-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":-39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531144956},"a-41":{"id":"a-41","title":"phoneRec","continuousParameterGroups":[{"id":"a-41-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-41-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|28e72a38-fa0b-d355-a5d5-56c53423c486"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-41-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|28e72a38-fa0b-d355-a5d5-56c53423c486"},"yValue":-109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531264185},"a-42":{"id":"a-42","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-42-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-42-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|e137e021-c285-a34c-df12-e84d40ada12c"},"yValue":109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-42-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|e137e021-c285-a34c-df12-e84d40ada12c"},"yValue":4,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531308853},"a-43":{"id":"a-43","title":"drone","continuousParameterGroups":[{"id":"a-43-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-43-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|196489d2-2635-7c67-0abe-8a6650b1b1f2"},"yValue":-22,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-43-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|196489d2-2635-7c67-0abe-8a6650b1b1f2"},"yValue":-74,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531354956},"a-44":{"id":"a-44","title":"connect","continuousParameterGroups":[{"id":"a-44-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-44-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d86914e5-8a06-1cad-682f-49849c2761a1"},"yValue":152,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-44-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d86914e5-8a06-1cad-682f-49849c2761a1"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531399676},"a-45":{"id":"a-45","title":"connect2","continuousParameterGroups":[{"id":"a-45-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-45-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce6bf221-d9a3-12c1-c380-47da6ec4de46"},"yValue":161,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-45-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|ce6bf221-d9a3-12c1-c380-47da6ec4de46"},"yValue":39,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531447427},"a-46":{"id":"a-46","title":"servers","continuousParameterGroups":[{"id":"a-46-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-46-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1f70c1dc-43e7-cfdf-0bb2-7a3485a2568a"},"yValue":48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-46-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|1f70c1dc-43e7-cfdf-0bb2-7a3485a2568a"},"yValue":-57,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531476670},"a-47":{"id":"a-47","title":"sound","continuousParameterGroups":[{"id":"a-47-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-47-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":30,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-47-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|d7dfc44f-053e-3ad8-84fe-b7670f1ef9ad"},"yValue":-30,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1549531878166},"a-48":{"id":"a-48","title":"loa","actionItemGroups":[],"createdOn":1549773810828,"useFirstGroupAsInitialState":false},"a-49":{"id":"a-49","title":"loadUp","actionItemGroups":[{"actionItems":[{"id":"a-49-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"yValue":317,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-49-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-49-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"easeIn","duration":600,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"value":1,"unit":""}},{"id":"a-49-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b6bbf84d663|1eefb01c-0a04-5ac0-08f9-62d30e2276d4"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1549773836045,"useFirstGroupAsInitialState":true},"a-50":{"id":"a-50","title":"loadUp2","actionItemGroups":[],"createdOn":1549775115723,"useFirstGroupAsInitialState":false},"a-51":{"id":"a-51","title":"h21","actionItemGroups":[{"actionItems":[{"id":"a-51-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"yValue":109,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"value":0,"unit":""}},{"id":"a-51-n-5","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"yValue":187,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-6","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-51-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":600,"target":{"id":"5c6275b0c8dd8b7bcf84d660|f89b9064-1c50-ca82-74d2-3b5ca9c45138"},"value":1,"unit":""}},{"id":"a-51-n-7","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}},{"id":"a-51-n-8","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"ease","duration":100,"target":{"id":"5c6275b0c8dd8b7bcf84d660|80d7f75f-bf4f-49c4-3f16-d2a69d04c423"},"value":1,"unit":""}}]}],"createdOn":1549775582791,"useFirstGroupAsInitialState":true},"a-52":{"id":"a-52","title":"59Left","actionItemGroups":[{"actionItems":[{"id":"a-52-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"yValue":-6,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550019835543,"useFirstGroupAsInitialState":false},"a-53":{"id":"a-53","title":"59LeftOut","actionItemGroups":[{"actionItems":[{"id":"a-53-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|b5ad9880-d791-eb4f-61d1-5d842a256bb2"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550019934710,"useFirstGroupAsInitialState":false},"a-54":{"id":"a-54","title":"59Right","actionItemGroups":[{"actionItems":[{"id":"a-54-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"yValue":-6,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550019998221,"useFirstGroupAsInitialState":false},"a-55":{"id":"a-55","title":"59RightOut","actionItemGroups":[{"actionItems":[{"id":"a-55-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e129"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550020029508,"useFirstGroupAsInitialState":false},"a-56":{"id":"a-56","title":"IconLeftColor","actionItemGroups":[{"actionItems":[{"id":"a-56-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|dc3c9505-412e-9a86-4e33-31e658184084"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1550020097970,"useFirstGroupAsInitialState":false},"a-57":{"id":"a-57","title":"iconBackColorLeft","actionItemGroups":[{"actionItems":[{"id":"a-57-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|e5e831ef-4fbe-12af-6463-426481c3775e"},"rValue":42,"gValue":223,"bValue":177,"aValue":1}}]}],"createdOn":1550020172785,"useFirstGroupAsInitialState":false},"a-58":{"id":"a-58","title":"IconBackColorLeftOut","actionItemGroups":[{"actionItems":[{"id":"a-58-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":300,"target":{"id":"5c6275b0c8dd8b141584d65b|e5e831ef-4fbe-12af-6463-426481c3775e"},"rValue":245,"gValue":245,"bValue":245,"aValue":1}}]}],"createdOn":1550021532240,"useFirstGroupAsInitialState":false},"a-59":{"id":"a-59","title":"IconLeftColorOut","actionItemGroups":[{"actionItems":[{"id":"a-59-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|dc3c9505-412e-9a86-4e33-31e658184084"},"rValue":59,"gValue":58,"bValue":58,"aValue":1}}]}],"createdOn":1550021661037,"useFirstGroupAsInitialState":false},"a-60":{"id":"a-60","title":"iconBackColorRight","actionItemGroups":[{"actionItems":[{"id":"a-60-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e12a"},"rValue":42,"gValue":223,"bValue":177,"aValue":1}}]}],"createdOn":1550022136493,"useFirstGroupAsInitialState":false},"a-61":{"id":"a-61","title":"iconBackColorRightOut","actionItemGroups":[{"actionItems":[{"id":"a-61-n","actionTypeId":"STYLE_BACKGROUND_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e12a"},"rValue":245,"gValue":245,"bValue":245,"aValue":1}}]}],"createdOn":1550022202315,"useFirstGroupAsInitialState":false},"a-62":{"id":"a-62","title":"iconCircleRightColor","actionItemGroups":[{"actionItems":[{"id":"a-62-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e12b"},"rValue":255,"gValue":255,"bValue":255,"aValue":1}}]}],"createdOn":1550022445493,"useFirstGroupAsInitialState":false},"a-63":{"id":"a-63","title":"iconCircleRightColorOut","actionItemGroups":[{"actionItems":[{"id":"a-63-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|f47f5d1f-0880-db0c-b7f6-00fff479e12b"},"rValue":99,"gValue":99,"bValue":99,"aValue":1}}]}],"createdOn":1550022512041,"useFirstGroupAsInitialState":false},"a-64":{"id":"a-64","title":"hover","actionItemGroups":[{"actionItems":[{"id":"a-64-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":1000,"target":{"id":"5c638877352968c1f234ddfb|049da01b-cffc-a7eb-aaeb-170d2f79cdc6"},"yValue":-48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"actionItems":[{"id":"a-64-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c638877352968c1f234ddfb|049da01b-cffc-a7eb-aaeb-170d2f79cdc6"},"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}],"createdOn":1550030703665,"useFirstGroupAsInitialState":false},"a-65":{"id":"a-65","title":"IMG45SCROLL","actionItemGroups":[],"createdOn":1550037914251,"useFirstGroupAsInitialState":false},"a-66":{"id":"a-66","title":"IMG45SCROLL","continuousParameterGroups":[{"id":"a-66-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-66-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d1"},"yValue":-30,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-66-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d1"},"yValue":-187,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550038386381},"a-67":{"id":"a-67","title":"IMG39SCROLL","continuousParameterGroups":[{"id":"a-67-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-67-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-67-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-57,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550038513780},"a-68":{"id":"a-68","title":"NEW39","continuousParameterGroups":[{"id":"a-68-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-68-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-22,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-68-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-117,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550038842127},"a-69":{"id":"a-69","title":"JJ","continuousParameterGroups":[{"id":"a-69-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-69-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-48,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-69-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6275b0c8dd8b141584d65b|7a69ca2e-4b0f-0532-00cc-5f634bdc33d3"},"yValue":-230,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550040062138},"a-70":{"id":"a-70","title":"New Scroll Animation","continuousParameterGroups":[{"id":"a-70-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-70-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6491c9c90f55a104fd1cb5|71de449a-6686-bf0a-dd68-3a17fed0171b"},"yValue":257,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-70-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6491c9c90f55a104fd1cb5|71de449a-6686-bf0a-dd68-3a17fed0171b"},"yValue":-196,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550124379778},"a-71":{"id":"a-71","title":"New Scroll Animation222","continuousParameterGroups":[{"id":"a-71-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-71-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6491c9c90f55a104fd1cb5|3a26a9ea-2bcc-232b-b933-0d3d10edac86"},"xValue":291,"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":40,"actionItems":[{"id":"a-71-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6491c9c90f55a104fd1cb5|3a26a9ea-2bcc-232b-b933-0d3d10edac86"},"xValue":-41,"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550125580193},"a-72":{"id":"a-72","title":"222","continuousParameterGroups":[{"id":"a-72-p","type":"SCROLL_PROGRESS","parameterLabel":"Scroll","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-72-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6491c9c90f55a104fd1cb5|8a865266-5376-65f0-a139-08279da3012c"},"yValue":4,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"keyframe":100,"actionItems":[{"id":"a-72-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"id":"5c6491c9c90f55a104fd1cb5|8a865266-5376-65f0-a139-08279da3012c"},"yValue":-230,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}],"createdOn":1550125979425},"e-95-slideInRight":{"id":"e-95-slideInRight","useFirstGroupAsInitialState":true,"actionItemGroups":[{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"duration":0,"target":{"id":null,"useEventTarget":true},"value":0}}]},{"actionItems":[{"actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"duration":0,"target":{"id":null,"useEventTarget":true},"xValue":100,"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]},{"actionItems":[{"actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"outQuart","duration":1000,"target":{"id":null,"useEventTarget":true},"value":1}},{"actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"outQuart","duration":1000,"target":{"id":null,"useEventTarget":true},"xValue":0,"yValue":0,"xUnit":"PX","yUnit":"PX","zUnit":"PX"}}]}]}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}
 );
